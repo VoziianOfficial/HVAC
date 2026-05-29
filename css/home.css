@@ -1538,3 +1538,394 @@
         padding-bottom: 27px !important;
     }
 }
+
+/* ==================================================
+   HOME FACTORS — PREMIUM CARDS
+================================================== */
+
+.home-factors {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 12%, rgba(126, 207, 221, 0.14), transparent 34%),
+        radial-gradient(circle at 88% 82%, rgba(255, 138, 31, 0.1), transparent 34%),
+        linear-gradient(180deg, var(--color-surface) 0%, #ffffff 100%);
+}
+
+.home-factors .factor-grid {
+    counter-reset: factor-card;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.home-factors .factor-card {
+    counter-increment: factor-card;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    justify-items: start;
+    align-content: start;
+    gap: 14px;
+    min-height: 230px;
+    padding: 24px;
+    border: 1px solid rgba(10, 33, 63, 0.1);
+    border-radius: 26px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 252, 0.96));
+    box-shadow: 0 16px 40px rgba(7, 26, 51, 0.07);
+    text-align: left;
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background-color var(--transition);
+}
+
+.home-factors .factor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--color-orange));
+    opacity: 0;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+.home-factors .factor-card::after {
+    content: counter(factor-card, decimal-leading-zero);
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    z-index: -1;
+    color: rgba(10, 33, 63, 0.045);
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.08em;
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.home-factors .factor-card__icon {
+    position: relative;
+    display: grid;
+    width: 58px;
+    height: 58px;
+    place-items: center;
+    margin-bottom: 4px;
+    border: 1px solid rgba(95, 195, 213, 0.24);
+    border-radius: 20px;
+    color: var(--color-navy-900);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.9), transparent 34%),
+        var(--color-aqua-soft);
+    box-shadow: 0 12px 26px rgba(7, 26, 51, 0.07);
+    transition:
+        color var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.home-factors .factor-card__icon svg {
+    width: 27px;
+    height: 27px;
+}
+
+.home-factors .factor-card h3 {
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.22rem;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.home-factors .factor-card p {
+    max-width: 280px;
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.58;
+}
+
+/* Accent variation */
+.home-factors .factor-card:nth-child(2n) .factor-card__icon {
+    color: #ffffff;
+    border-color: rgba(255, 138, 31, 0.34);
+    background:
+        radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.22), transparent 36%),
+        var(--color-orange);
+}
+
+.home-factors .factor-card:nth-child(3n)::before {
+    background: linear-gradient(90deg, var(--color-orange), var(--aqua));
+}
+
+/* Hover */
+.home-factors .factor-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(95, 195, 213, 0.38);
+    background: #ffffff;
+    box-shadow: 0 26px 68px rgba(7, 26, 51, 0.13);
+}
+
+.home-factors .factor-card:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.home-factors .factor-card:hover::after {
+    color: rgba(255, 138, 31, 0.07);
+    transform: translateY(-4px) scale(1.04);
+}
+
+.home-factors .factor-card:hover .factor-card__icon {
+    color: var(--color-orange);
+    border-color: rgba(255, 138, 31, 0.34);
+    background: var(--color-orange-soft);
+    box-shadow: 0 16px 34px rgba(255, 138, 31, 0.14);
+    transform: translateY(-2px) rotate(-2deg);
+}
+
+.home-factors .factor-card:nth-child(2n):hover .factor-card__icon {
+    color: var(--color-navy-900);
+    border-color: rgba(95, 195, 213, 0.34);
+    background: var(--color-aqua-soft);
+    box-shadow: 0 16px 34px rgba(126, 207, 221, 0.16);
+}
+
+/* Slight premium rhythm */
+.home-factors .factor-card:nth-child(2),
+.home-factors .factor-card:nth-child(5) {
+    transform: translateY(18px);
+}
+
+.home-factors .factor-card:nth-child(2):hover,
+.home-factors .factor-card:nth-child(5):hover {
+    transform: translateY(12px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .home-factors .factor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-factors .factor-card:nth-child(2),
+    .home-factors .factor-card:nth-child(5) {
+        transform: none;
+    }
+
+    .home-factors .factor-card:nth-child(2):hover,
+    .home-factors .factor-card:nth-child(5):hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 640px) {
+    .home-factors .factor-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .home-factors .factor-card {
+        min-height: auto;
+        grid-template-columns: 58px 1fr;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .home-factors .factor-card__icon {
+        grid-row: span 2;
+        margin-bottom: 0;
+    }
+
+    .home-factors .factor-card h3 {
+        align-self: end;
+        font-size: 1.12rem;
+    }
+
+    .home-factors .factor-card p {
+        max-width: none;
+        font-size: 0.88rem;
+    }
+
+    .home-factors .factor-card::after {
+        right: 16px;
+        top: 12px;
+        font-size: 3.2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-factors .factor-card {
+        grid-template-columns: 1fr;
+    }
+
+    .home-factors .factor-card__icon {
+        grid-row: auto;
+    }
+}
+/* ==================================================
+   HOME FACTORS — COMPACT CARDS / ICON RIGHT
+================================================== */
+
+.home-factors .factor-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.home-factors .factor-card {
+    min-height: 18px;
+    padding: 20px 82px 20px 20px;
+    gap: 8px;
+}
+
+.home-factors .factor-card__icon {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    border-radius: 16px;
+}
+
+.home-factors .factor-card__icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.home-factors .factor-card h3 {
+    max-width: 220px;
+    font-size: 1.12rem;
+}
+
+.home-factors .factor-card p {
+    max-width: 245px;
+    font-size: 0.84rem;
+    line-height: 1.48;
+}
+
+.home-factors .factor-card::after {
+    right: 82px;
+    top: 14px;
+    font-size: 3.4rem;
+}
+
+/* убираем лесенку, чтобы секция была компактнее */
+.home-factors .factor-card:nth-child(2),
+.home-factors .factor-card:nth-child(5) {
+    transform: none;
+}
+
+.home-factors .factor-card:nth-child(2):hover,
+.home-factors .factor-card:nth-child(5):hover,
+.home-factors .factor-card:hover {
+    transform: translateY(-4px);
+}
+
+/* tablet */
+@media (max-width: 1024px) {
+    .home-factors .factor-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-factors .factor-card {
+        min-height: 18px;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .home-factors .factor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-factors .factor-card {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr 48px;
+        grid-template-areas:
+            "title icon"
+            "text icon";
+        gap: 6px 14px;
+        padding: 18px;
+    }
+
+    .home-factors .factor-card__icon {
+        position: relative;
+        top: auto;
+        right: auto;
+        grid-area: icon;
+        align-self: start;
+        justify-self: end;
+    }
+
+    .home-factors .factor-card h3 {
+        grid-area: title;
+        max-width: none;
+        align-self: end;
+    }
+
+    .home-factors .factor-card p {
+        grid-area: text;
+        max-width: none;
+    }
+
+    .home-factors .factor-card::after {
+        right: 72px;
+        top: 10px;
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-factors .factor-card {
+        grid-template-columns: 1fr 44px;
+    }
+
+    .home-factors .factor-card__icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
+    }
+
+    .home-factors .factor-card__icon svg {
+        width: 21px;
+        height: 21px;
+    }
+}
+/* ==================================================
+   HOME HERO — BRIGHTER PHOTOS
+================================================== */
+
+.home-hero__slide img {
+    filter: brightness(1.16) saturate(1.08) contrast(1.03);
+}
+
+.home-hero__overlay {
+    background:
+        linear-gradient(90deg,
+            rgba(4, 18, 36, 0.88) 0%,
+            rgba(4, 18, 36, 0.72) 42%,
+            rgba(4, 18, 36, 0.26) 72%,
+            rgba(4, 18, 36, 0.52) 100%),
+        linear-gradient(180deg,
+            rgba(4, 18, 36, 0.28) 0%,
+            rgba(4, 18, 36, 0.66) 100%),
+        radial-gradient(circle at 16% 26%, rgba(126, 207, 221, 0.16), transparent 34%),
+        radial-gradient(circle at 66% 70%, rgba(255, 138, 31, 0.12), transparent 32%);
+}
