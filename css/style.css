@@ -77,7 +77,7 @@
 html {
     min-width: 320px;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
     text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
@@ -85,7 +85,7 @@ html {
 body {
     min-width: 320px;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
@@ -2233,4 +2233,38 @@ main {
         opacity: 1;
         transform: none;
     }
+}
+
+/* ==================================================
+   FINAL STICKY HEADER FIX
+================================================== */
+
+body>.site-header,
+body>[data-site-header].site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+}
+
+.site-header {
+    transform: none !important;
+    will-change: auto;
+}
+
+/* ==================================================
+   FINAL STICKY HEADER FIX
+================================================== */
+
+body>.site-header,
+body>[data-site-header].site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+}
+
+.site-header {
+    transform: none !important;
+    will-change: auto;
 }
