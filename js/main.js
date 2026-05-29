@@ -42,33 +42,43 @@
         return `<i class="${className}" data-lucide="${escapeHTML(name)}" aria-hidden="true"></i>`;
     };
 
-    const buildLogoIcon = (idSuffix = 'main') => {
-        const gradientId = `hvacLogoGradient-${idSuffix}`;
+  const buildLogoIcon = (idSuffix = 'main') => {
+    const gradientId = `hvacLogoGradient-${idSuffix}`;
+    const highlightId = `hvacLogoHighlight-${idSuffix}`;
 
-        return `
-      <svg class="site-logo__svg" viewBox="0 0 100 100" role="img" aria-label="${escapeHTML(CONFIG.brand?.logoAlt || 'HVAC provider matching platform')}">
-        <defs>
-          <linearGradient id="${gradientId}" x1="20%" y1="10%" x2="84%" y2="92%">
-            <stop offset="0%" stop-color="#ffb15a"></stop>
-            <stop offset="46%" stop-color="#ff8a1f"></stop>
-            <stop offset="100%" stop-color="#ff6414"></stop>
-          </linearGradient>
-        </defs>
+    return `
+    <svg class="site-logo__svg" viewBox="0 0 100 100" role="img" aria-label="${escapeHTML(CONFIG.brand?.logoAlt || 'HVAC provider matching platform')}">
+      <defs>
+        <linearGradient id="${gradientId}" x1="18%" y1="8%" x2="86%" y2="92%">
+          <stop offset="0%" stop-color="#ffb15a"></stop>
+          <stop offset="48%" stop-color="#ff8a1f"></stop>
+          <stop offset="100%" stop-color="#ff6414"></stop>
+        </linearGradient>
 
-        <g class="site-logo__fan" fill="url(#${gradientId})">
-          <path d="M50 8c10.8 1.2 18.3 8.4 18.9 18.1.3 5.7-2.2 10.9-6.2 14.3-5.1-4.6-10.9-7.1-17.5-6.8C42.4 23.2 43.8 13.7 50 8Z"></path>
-          <path d="M90.1 38.1c2.2 10.6-2.5 20-11.5 23.6-5.3 2.1-11.1 1.3-15.6-1.3 2.8-6.3 3.4-12.6 1.1-18.8 8.8-6.1 18.3-7.7 26-3.5Z"></path>
-          <path d="M74.8 88.3c-9.4 5.4-19.8 3.9-26.1-3.5-3.7-4.3-5-10-4-15.1 6.9.7 13-1 18.1-5.2 8.5 6.5 12.8 15.1 12 23.8Z"></path>
-          <path d="M21.3 84.9C13.2 77.7 11.4 67.3 17 59.4c3.3-4.6 8.5-7.3 13.7-7.7 1.5 6.7 5 12 10.6 15.5-3.6 10.1-10.4 16.8-20 17.7Z"></path>
-          <path d="M9.7 31.4c4.4-9.9 13.8-14.7 23.2-12.2 5.5 1.5 9.9 5.3 12.1 10-5.9 3.5-10 8.3-11.8 14.7-10.7-.2-19.3-4.4-23.5-12.5Z"></path>
-        </g>
+        <linearGradient id="${highlightId}" x1="38%" y1="10%" x2="64%" y2="70%">
+          <stop offset="0%" stop-color="#ffe2be" stop-opacity="0.58"></stop>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"></stop>
+        </linearGradient>
+      </defs>
 
-        <circle class="site-logo__hub" cx="50" cy="50" r="12.4" fill="#041224"></circle>
-        <circle class="site-logo__hub-ring" cx="50" cy="50" r="8.2" fill="url(#${gradientId})"></circle>
-        <circle class="site-logo__hub-dot" cx="50" cy="50" r="3.3" fill="#fff7ef"></circle>
-      </svg>
-    `;
-    };
+      <g class="site-logo__fan" fill="url(#${gradientId})">
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z"></path>
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z" transform="rotate(72 50 50)"></path>
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z" transform="rotate(144 50 50)"></path>
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z" transform="rotate(216 50 50)"></path>
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z" transform="rotate(288 50 50)"></path>
+      </g>
+
+      <g opacity="0.5" fill="url(#${highlightId})">
+        <path d="M50 7.8C60.2 9.1 67.5 16 69.2 25.8C70.6 34.1 67.1 40.4 61.4 43.8C56.8 39 51.4 36.4 45.1 36.3C42.3 25.2 43.6 15.8 50 7.8Z"></path>
+      </g>
+
+      <circle class="site-logo__hub" cx="50" cy="50" r="13.2" fill="#041224"></circle>
+      <circle class="site-logo__hub-ring" cx="50" cy="50" r="8.6" fill="url(#${gradientId})"></circle>
+      <circle class="site-logo__hub-dot" cx="50" cy="50" r="3.2" fill="#fff7ef"></circle>
+    </svg>
+  `;
+  };
 
     const buildLogo = (location = 'header') => {
         return `

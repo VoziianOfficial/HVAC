@@ -1,0 +1,36 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hvacFanGradient" x1="23" y1="10" x2="106" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB15A"/>
+      <stop offset="0.48" stop-color="#FF8A1F"/>
+      <stop offset="1" stop-color="#FF6414"/>
+    </linearGradient>
+
+    <linearGradient id="hvacFanHighlight" x1="50" y1="12" x2="82" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFE2BE" stop-opacity="0.58"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="0" y="0" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#041224" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <g fill="url(#hvacFanGradient)">
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z"/>
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z" transform="rotate(72 64 64)"/>
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z" transform="rotate(144 64 64)"/>
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z" transform="rotate(216 64 64)"/>
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z" transform="rotate(288 64 64)"/>
+    </g>
+
+    <g opacity="0.5" fill="url(#hvacFanHighlight)">
+      <path d="M64 10C77.1 11.7 86.5 20.5 88.7 33C90.5 43.6 86 51.7 78.6 56C72.7 49.8 65.8 46.4 57.7 46.3C54.1 32.1 55.8 20.2 64 10Z"/>
+    </g>
+
+    <circle cx="64" cy="64" r="17" fill="#041224"/>
+    <circle cx="64" cy="64" r="11" fill="url(#hvacFanGradient)"/>
+    <circle cx="64" cy="64" r="4.2" fill="#FFF7EF"/>
+  </g>
+</svg>
