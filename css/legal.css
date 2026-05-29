@@ -1,12 +1,3 @@
-/* ==================================================
-   HVAC — LEGAL PAGES
-   File: /css/legal.css
-================================================== */
-
-/* ==================================================
-   LEGAL HERO
-================================================== */
-
 .legal-hero {
     position: relative;
     isolation: isolate;
@@ -107,10 +98,6 @@
     height: 16px;
     color: var(--aqua);
 }
-
-/* ==================================================
-   LEGAL LAYOUT
-================================================== */
 
 .legal-page {
     background:
@@ -223,10 +210,6 @@
     font-size: 0.76rem;
     line-height: 1.42;
 }
-
-/* ==================================================
-   LEGAL CONTENT
-================================================== */
 
 .legal-content {
     display: grid;
@@ -373,10 +356,6 @@
     color: #ffffff;
 }
 
-/* ==================================================
-   LEGAL INFO STRIPS
-================================================== */
-
 .legal-info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -471,10 +450,6 @@
     line-height: 1.5;
 }
 
-/* ==================================================
-   LEGAL CONTACT BOX
-================================================== */
-
 .legal-contact-box {
     display: grid;
     grid-template-columns: 58px 1fr;
@@ -529,10 +504,6 @@
     color: var(--color-orange);
 }
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
 @media (max-width: 1024px) {
     .legal-layout {
         grid-template-columns: 1fr;
@@ -564,10 +535,12 @@
 
     .legal-hero__meta {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
     .legal-hero__pill {
-        width: fit-content;
+        width: 100%;
     }
 
     .legal-card,

@@ -1,12 +1,3 @@
-/* ==================================================
-   HVAC — HOME PAGE
-   File: /css/home.css
-================================================== */
-
-/* ==================================================
-   HOME HERO
-================================================== */
-
 .home-hero {
     position: relative;
     isolation: isolate;
@@ -224,10 +215,6 @@
     background: var(--color-orange);
 }
 
-/* ==================================================
-   QUICK SERVICES
-================================================== */
-
 .quick-services {
     position: relative;
     z-index: 4;
@@ -323,10 +310,6 @@
     font-size: 0.76rem;
     line-height: 1.35;
 }
-
-/* ==================================================
-   AGGREGATOR MODEL
-================================================== */
 
 .home-model {
     background:
@@ -477,10 +460,6 @@
     font-size: 0.9rem;
 }
 
-/* ==================================================
-   SERVICES PREVIEW
-================================================== */
-
 .home-services {
     background: #ffffff;
 }
@@ -494,10 +473,6 @@
 .home-services .service-card__link {
     min-height: 360px;
 }
-
-/* ==================================================
-   AIRFLOW / COMFORT SECTION
-================================================== */
 
 .home-airflow {
     position: relative;
@@ -615,10 +590,6 @@
     line-height: 1.35;
 }
 
-/* ==================================================
-   COMPARISON FACTORS SECTION
-================================================== */
-
 .home-factors {
     background: linear-gradient(180deg, var(--color-surface) 0%, #ffffff 100%);
 }
@@ -630,10 +601,6 @@
 .home-factors .factor-grid {
     position: relative;
 }
-
-/* ==================================================
-   HOME PROCESS STRIP
-================================================== */
 
 .home-process {
     color: var(--color-text-light);
@@ -662,10 +629,6 @@
 .home-process__head .section-text {
     color: rgba(248, 251, 255, 0.72);
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1180px) {
     .home-hero h1 {
@@ -723,7 +686,7 @@
 
 @media (max-width: 860px) {
     .home-hero__badges {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .home-model__split {
@@ -845,10 +808,6 @@
     }
 }
 
-/* ==================================================
-   HOME MODEL MINI CARDS — CLEAN PREMIUM HOVER
-================================================== */
-
 .home-model__mini-card {
     position: relative;
     isolation: isolate;
@@ -956,7 +915,6 @@
     transform: translateX(9px);
 }
 
-/* Orange card variation */
 .home-model__mini-card--orange::before {
     background: linear-gradient(90deg, var(--color-orange), var(--aqua));
 }
@@ -975,7 +933,6 @@
     color: var(--color-orange-hover);
 }
 
-/* Keep list dots / checks visible */
 .home-model__mini-card li::before {
     transition:
         background-color var(--transition),
@@ -992,10 +949,6 @@
 .home-model__mini-card--orange:hover li::before {
     box-shadow: 0 0 0 5px rgba(255, 138, 31, 0.14);
 }
-
-/* ==================================================
-   HERO BADGES + PAGINATION ROW
-================================================== */
 
 .home-hero__content {
     max-width: 960px;
@@ -1045,10 +998,6 @@
     }
 }
 
-/* ==================================================
-   HOME FAQ
-================================================== */
-
 .home-faq {
     background:
         linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
@@ -1076,10 +1025,6 @@
         top: auto;
     }
 }
-
-/* ==================================================
-   HOME PROCESS — PREMIUM HORIZONTAL AIRFLOW
-================================================== */
 
 .home-process {
     position: relative;
@@ -1123,7 +1068,6 @@
     color: var(--color-text-muted);
 }
 
-/* background air lines */
 .home-process__bg-lines {
     position: absolute;
     inset: 0;
@@ -1198,7 +1142,6 @@
     animation-delay: -2s;
 }
 
-/* main horizontal flow */
 .home-process-flow {
     position: relative;
     z-index: 2;
@@ -1363,7 +1306,6 @@
     line-height: 1.6;
 }
 
-/* desktop alternating air feeling */
 .home-process-step:nth-child(even) {
     padding-top: 34px;
 }
@@ -1372,7 +1314,6 @@
     margin-top: -2px;
 }
 
-/* animations */
 @keyframes homeProcessAirMove {
     0% {
         transform: translateX(-16px);
@@ -1409,7 +1350,6 @@
     }
 }
 
-/* tablet */
 @media (max-width: 1100px) {
     .home-process-flow {
         padding-top: 10px;
@@ -1446,7 +1386,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 640px) {
     .home-process {
         padding-top: 46px !important;
@@ -1499,7 +1438,6 @@
     }
 }
 
-/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
     .home-process__airline,
@@ -1507,10 +1445,6 @@
         animation: none !important;
     }
 }
-
-/* ==================================================
-   REDUCED PADDING — FACTORS / FAQ / PROCESS
-================================================== */
 
 .section.home-factors,
 .section.home-faq,
@@ -1538,10 +1472,6 @@
         padding-bottom: 27px !important;
     }
 }
-
-/* ==================================================
-   HOME FACTORS — PREMIUM CARDS
-================================================== */
 
 .home-factors {
     position: relative;
@@ -1659,7 +1589,6 @@
     line-height: 1.58;
 }
 
-/* Accent variation */
 .home-factors .factor-card:nth-child(2n) .factor-card__icon {
     color: #ffffff;
     border-color: rgba(255, 138, 31, 0.34);
@@ -1672,7 +1601,6 @@
     background: linear-gradient(90deg, var(--color-orange), var(--aqua));
 }
 
-/* Hover */
 .home-factors .factor-card:hover {
     transform: translateY(-5px);
     border-color: rgba(95, 195, 213, 0.38);
@@ -1705,7 +1633,6 @@
     box-shadow: 0 16px 34px rgba(126, 207, 221, 0.16);
 }
 
-/* Slight premium rhythm */
 .home-factors .factor-card:nth-child(2),
 .home-factors .factor-card:nth-child(5) {
     transform: translateY(18px);
@@ -1716,7 +1643,6 @@
     transform: translateY(12px);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .home-factors .factor-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1778,10 +1704,6 @@
         grid-row: auto;
     }
 }
-/* ==================================================
-   HOME FACTORS — COMPACT CARDS / ICON RIGHT
-================================================== */
-
 .home-factors .factor-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 14px;
@@ -1825,7 +1747,6 @@
     font-size: 3.4rem;
 }
 
-/* убираем лесенку, чтобы секция была компактнее */
 .home-factors .factor-card:nth-child(2),
 .home-factors .factor-card:nth-child(5) {
     transform: none;
@@ -1837,7 +1758,6 @@
     transform: translateY(-4px);
 }
 
-/* tablet */
 @media (max-width: 1024px) {
     .home-factors .factor-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1848,7 +1768,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 640px) {
     .home-factors .factor-grid {
         grid-template-columns: 1fr;
@@ -1908,10 +1827,6 @@
         height: 21px;
     }
 }
-/* ==================================================
-   HOME HERO — BRIGHTER PHOTOS
-================================================== */
-
 .home-hero__slide img {
     filter: brightness(1.16) saturate(1.08) contrast(1.03);
 }

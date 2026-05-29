@@ -1,19 +1,6 @@
-/* ==================================================
-   HVAC — ABOUT PAGE
-   File: /css/about.css
-================================================== */
-
-/* ==================================================
-   ABOUT HERO
-================================================== */
-
 .about-hero .page-hero__inner {
     max-width: 840px;
 }
-
-/* ==================================================
-   ABOUT STORY
-================================================== */
 
 .about-story {
     background:
@@ -153,10 +140,6 @@
     line-height: 1.42;
 }
 
-/* ==================================================
-   AGGREGATOR MODEL
-================================================== */
-
 .about-model {
     color: var(--color-text-light);
     background:
@@ -265,10 +248,6 @@
     font-size: 0.92rem;
     line-height: 1.55;
 }
-
-/* ==================================================
-   DOES / DOES NOT SECTION
-================================================== */
 
 .about-boundaries {
     background:
@@ -379,10 +358,6 @@
     color: #ffffff;
     background: var(--color-orange);
 }
-
-/* ==================================================
-   SERVICE MARQUEE
-================================================== */
 
 .about-marquee-section {
     padding: clamp(52px, 7vw, 82px) 0;
@@ -524,10 +499,6 @@
     }
 }
 
-/* ==================================================
-   TRUST / VALUES
-================================================== */
-
 .about-values {
     background:
         linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
@@ -632,10 +603,6 @@
     line-height: 1.52;
 }
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
 @media (max-width: 1180px) {
 
     .about-story__grid,
@@ -657,7 +624,6 @@
         inset-left: 0;
     }
 
-    /* tablet: icons right + shorter cards */
     .about-model__card,
     .about-value-card {
         grid-template-columns: 1fr 54px;
@@ -808,17 +774,12 @@
     animation-play-state: paused;
 }
 
-/* ==================================================
-   ABOUT BOUNDARIES — CARD HOVERS + AIRFLOW MOTION
-================================================== */
-
 .about-boundaries {
     position: relative;
     isolation: isolate;
     overflow: hidden;
 }
 
-/* мягкое движение воздуха на фоне секции */
 .about-boundaries::before,
 .about-boundaries::after {
     content: '';
@@ -851,7 +812,6 @@
     z-index: 2;
 }
 
-/* сами карточки */
 .about-boundary-card {
     position: relative;
     isolation: isolate;
@@ -863,7 +823,6 @@
         box-shadow var(--transition);
 }
 
-/* верхняя светящаяся линия */
 .about-boundary-card::before {
     content: '';
     position: absolute;
@@ -881,7 +840,6 @@
         transform var(--transition);
 }
 
-/* легкий airflow внутри карточки, за текстом */
 .about-boundary-card::after {
     content: '';
     position: absolute;
@@ -900,7 +858,6 @@
     transition: opacity var(--transition);
 }
 
-/* оранжевая карточка — другой акцент */
 .about-boundary-card--orange::before {
     background: linear-gradient(90deg, var(--color-orange), var(--aqua));
 }
@@ -915,7 +872,6 @@
             transparent 100%);
 }
 
-/* hover карточки */
 .about-boundary-card:hover {
     transform: translateY(-5px);
     border-color: rgba(126, 207, 221, 0.36);
@@ -936,7 +892,6 @@
     animation: aboutCardAirSweep 1.15s var(--ease) forwards;
 }
 
-/* иконки */
 .about-boundary-card__icon {
     transition:
         transform var(--transition),
@@ -959,7 +914,6 @@
     box-shadow: 0 16px 34px rgba(126, 207, 221, 0.18);
 }
 
-/* заголовок */
 .about-boundary-card h3 {
     transition: color var(--transition);
 }
@@ -972,7 +926,6 @@
     color: var(--color-orange-hover);
 }
 
-/* hover на каждую li */
 .about-boundary-card li {
     position: relative;
     padding: 8px 10px;
@@ -993,7 +946,6 @@
     background: rgba(255, 138, 31, 0.09);
 }
 
-/* если у li есть свои точки / before — добавляем им эффект */
 .about-boundary-card li::before {
     transition:
         transform var(--transition),
@@ -1010,7 +962,6 @@
     box-shadow: 0 0 0 5px rgba(255, 138, 31, 0.13);
 }
 
-/* animations */
 @keyframes aboutBoundariesAir {
     0% {
         transform: translateX(-28px) rotate(-4deg);
@@ -1037,7 +988,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 640px) {
 
     .about-boundaries::before,
@@ -1058,7 +1008,6 @@
     }
 }
 
-/* reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
     .about-boundaries::before,
@@ -1067,10 +1016,6 @@
         animation: none !important;
     }
 }
-
-/* ==================================================
-   ABOUT FAQ
-================================================== */
 
 .about-faq {
     background:
@@ -1114,10 +1059,6 @@
         top: auto;
     }
 }
-
-/* ==================================================
-   ABOUT FAQ — REDUCED PADDING
-================================================== */
 
 .section.about-faq {
     padding-top: clamp(36px, 4vw, 59px) !important;

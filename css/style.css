@@ -1,31 +1,22 @@
-/* ==================================================
-   HVAC — GLOBAL STYLES
-   File: /css/style.css
-================================================== */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-    /* Core dark navy palette */
     --color-navy-950: #041224;
     --color-navy-900: #071a33;
     --color-navy-850: #0a213f;
     --color-navy-800: #0d2a4d;
     --color-navy-700: #12365f;
 
-    /* Light surfaces */
     --color-white: #ffffff;
     --color-surface: #f7fafc;
     --color-surface-soft: #eef4f8;
     --color-surface-blue: #eaf3f7;
 
-    /* Text colors */
     --color-text-dark: #102033;
     --color-text-muted: #5f6f80;
     --color-text-light: #f8fbff;
     --color-text-soft-light: rgba(248, 251, 255, 0.76);
 
-    /* Accent colors */
     --color-orange: #ff8a1f;
     --color-orange-hover: #ff7614;
     --color-orange-soft: #fff0df;
@@ -34,7 +25,6 @@
     --color-aqua-hover: #5fc3d5;
     --color-aqua-soft: #e4f8fb;
 
-    /* Borders and shadows */
     --color-border-light: rgba(10, 33, 63, 0.12);
     --color-border-dark: rgba(126, 207, 221, 0.22);
 
@@ -43,7 +33,6 @@
     --shadow-dark: 0 24px 70px rgba(4, 18, 36, 0.32);
     --shadow-orange: 0 14px 34px rgba(255, 138, 31, 0.28);
 
-    /* Layout */
     --container: 1180px;
     --container-wide: 1320px;
     --header-height: 76px;
@@ -52,21 +41,15 @@
     --radius-lg: 24px;
     --radius-xl: 32px;
 
-    /* Type */
     --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 
-    /* Motion */
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
     --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: 160ms var(--ease);
     --transition: 260ms var(--ease);
     --transition-slow: 520ms var(--ease-soft);
 }
-
-/* ==================================================
-   RESET / BASE
-================================================== */
 
 *,
 *::before,
@@ -309,10 +292,6 @@ main {
         linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 58%, var(--color-navy-800) 100%);
 }
 
-/* ==================================================
-   BUTTONS
-================================================== */
-
 .btn {
     --btn-bg: transparent;
     --btn-color: currentColor;
@@ -416,10 +395,6 @@ main {
     align-items: center;
     gap: 14px;
 }
-
-/* ==================================================
-   HEADER / LOGO / NAVIGATION
-================================================== */
 
 .site-header {
     position: sticky;
@@ -597,10 +572,6 @@ main {
     font-size: 0.86rem;
 }
 
-/* ==================================================
-   SERVICES DROPDOWN
-================================================== */
-
 .services-dropdown {
     position: absolute;
     top: calc(100% + 14px);
@@ -728,10 +699,6 @@ main {
     -webkit-box-orient: vertical;
 }
 
-/* ==================================================
-   MOBILE MENU
-================================================== */
-
 .mobile-menu-toggle {
     display: none;
     width: 44px;
@@ -750,10 +717,6 @@ main {
     background: rgba(126, 207, 221, 0.12);
     border-color: rgba(126, 207, 221, 0.48);
 }
-
-/* ==================================================
-   BURGER ICON — CENTER FIX
-================================================== */
 
 .mobile-menu-toggle {
     position: relative;
@@ -790,7 +753,6 @@ main {
     top: calc(50% + 7px);
 }
 
-/* close button icon center */
 .mobile-menu__close {
     display: grid;
     place-items: center;
@@ -1013,10 +975,6 @@ main {
     width: 100%;
 }
 
-/* ==================================================
-   FOOTER
-================================================== */
-
 .site-footer {
     position: relative;
     color: var(--color-text-light);
@@ -1154,10 +1112,6 @@ main {
     color: var(--aqua);
 }
 
-/* ==================================================
-   COOKIE BANNER
-================================================== */
-
 .cookie-banner {
     position: fixed;
     left: 50%;
@@ -1227,10 +1181,6 @@ main {
         opacity var(--transition),
         transform var(--transition);
 }
-
-/* ==================================================
-   SERVICE CARDS — GLOBAL
-================================================== */
 
 .service-card {
     min-width: 0;
@@ -1378,10 +1328,6 @@ main {
     }
 }
 
-/* ==================================================
-   GLOBAL CARDS / LISTS
-================================================== */
-
 .info-card {
     position: relative;
     padding: 24px;
@@ -1472,10 +1418,6 @@ main {
 .section--dark .check-list li {
     color: rgba(248, 251, 255, 0.78);
 }
-
-/* ==================================================
-   COMPARISON FACTORS / PROCESS
-================================================== */
 
 .factor-grid {
     display: grid;
@@ -1590,10 +1532,6 @@ main {
     line-height: 1.5;
 }
 
-/* ==================================================
-   PAGE HERO — SHARED
-================================================== */
-
 .page-hero {
     position: relative;
     isolation: isolate;
@@ -1668,10 +1606,6 @@ main {
     font-size: clamp(1rem, 1.6vw, 1.16rem);
 }
 
-/* ==================================================
-   CTA BEFORE FOOTER
-================================================== */
-
 .final-cta {
     position: relative;
     isolation: isolate;
@@ -1729,10 +1663,6 @@ main {
     color: rgba(248, 251, 255, 0.74);
     font-size: 1rem;
 }
-
-/* ==================================================
-   FAQ
-================================================== */
 
 .faq-list {
     display: grid;
@@ -1794,10 +1724,6 @@ main {
     display: none;
 }
 
-/* ==================================================
-   REVEAL ANIMATION
-================================================== */
-
 [data-reveal] {
     opacity: 0;
     transform: translateY(18px);
@@ -1810,10 +1736,6 @@ main {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* ==================================================
-   FORM BASE
-================================================== */
 
 .form-card {
     padding: clamp(22px, 4vw, 34px);
@@ -1980,10 +1902,6 @@ main {
     grid-column: 1 / -1;
 }
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
 @media (max-width: 1180px) {
     .factor-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1997,7 +1915,6 @@ main {
         display: none;
     }
 
-    /* tablet: icons right + shorter process cards */
     .process-card {
         grid-template-columns: 1fr 52px;
         column-gap: 12px;
@@ -2298,10 +2215,6 @@ main {
     }
 }
 
-/* ==================================================
-   REDUCED MOTION
-================================================== */
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -2322,10 +2235,6 @@ main {
     }
 }
 
-/* ==================================================
-   FINAL STICKY HEADER FIX
-================================================== */
-
 body>.site-header,
 body>[data-site-header].site-header {
     position: sticky !important;
@@ -2338,10 +2247,6 @@ body>[data-site-header].site-header {
     transform: none !important;
     will-change: auto;
 }
-
-/* ==================================================
-   REDUCED SECTION PADDING — SELECTED SECTIONS
-================================================== */
 
 .section.home-model,
 .section.home-services,
@@ -2369,10 +2274,6 @@ body>[data-site-header].site-header {
         padding-bottom: 27px !important;
     }
 }
-
-/* ==================================================
-   MOBILE HERO TITLES — CENTER FULL WIDTH
-================================================== */
 
 @media (max-width: 640px) {
 
@@ -2408,10 +2309,6 @@ body>[data-site-header].site-header {
         justify-content: center;
     }
 }
-
-/* ==================================================
-   MOBILE MENU — SMOOTH OPEN/CLOSE RELIABILITY
-================================================== */
 
 .mobile-menu {
     visibility: hidden;
