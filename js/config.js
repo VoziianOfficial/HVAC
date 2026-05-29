@@ -1,5 +1,12 @@
 'use strict';
 
+const SHARED_TAB_IMAGES = [
+    './assets/images/tab-central-air.jpg',
+    './assets/images/tab-ductless-mini-split.jpg',
+    './assets/images/tab-heat-pump-cooling.jpg',
+    './assets/images/tab-replacement-planning.jpg'
+];
+
 window.SITE_CONFIG = {
     companyName: 'HVAC',
     companyId: 'HVAC-MATCH-2026',
@@ -81,7 +88,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'central-air',
                     label: 'Central Air',
-                    image: './assets/images/tab-central-air.jpg',
+                    image: SHARED_TAB_IMAGES[0],
                     title: 'Central Air',
                     text:
                         'Central air systems use ductwork to distribute cooled air throughout the home.',
@@ -96,7 +103,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'ductless-mini-split',
                     label: 'Ductless Mini-Split',
-                    image: './assets/images/tab-ductless-mini-split.jpg',
+                    image: SHARED_TAB_IMAGES[1],
                     title: 'Ductless Mini-Split',
                     text:
                         'Ductless mini-splits may be used for targeted comfort zones or spaces without existing ductwork.',
@@ -111,7 +118,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'heat-pump-cooling',
                     label: 'Heat Pump Cooling',
-                    image: './assets/images/tab-heat-pump-cooling.jpg',
+                    image: SHARED_TAB_IMAGES[2],
                     title: 'Heat Pump Cooling',
                     text:
                         'Heat pumps can support both cooling and heating depending on the system type and climate needs.',
@@ -126,7 +133,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'replacement-planning',
                     label: 'Replacement Planning',
-                    image: './assets/images/tab-replacement-planning.jpg',
+                    image: SHARED_TAB_IMAGES[3],
                     title: 'Replacement Planning',
                     text:
                         'Replacement planning helps homeowners compare timing, system options and provider quote details.',
@@ -185,7 +192,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'cooling-issues',
                     label: 'Cooling Issues',
-                    image: './assets/images/tab-cooling-issues.jpg',
+                    image: SHARED_TAB_IMAGES[0],
                     title: 'Cooling Issues',
                     text:
                         'Cooling issues may involve poor airflow, warm air, short cycling or system performance concerns.',
@@ -200,7 +207,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'heating-issues',
                     label: 'Heating Issues',
-                    image: './assets/images/tab-heating-issues.jpg',
+                    image: SHARED_TAB_IMAGES[1],
                     title: 'Heating Issues',
                     text:
                         'Heating issues may include uneven warmth, system startup problems or reduced performance.',
@@ -215,7 +222,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'airflow-problems',
                     label: 'Airflow Problems',
-                    image: './assets/images/tab-airflow-problems.jpg',
+                    image: SHARED_TAB_IMAGES[2],
                     title: 'Airflow Problems',
                     text:
                         'Airflow concerns can relate to ducts, filters, vents, blower components or system balance.',
@@ -230,7 +237,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'system-diagnostics',
                     label: 'System Diagnostics',
-                    image: './assets/images/tab-system-diagnostics.jpg',
+                    image: SHARED_TAB_IMAGES[3],
                     title: 'System Diagnostics',
                     text:
                         'Diagnostic visits help identify likely system issues before repair options are reviewed.',
@@ -289,7 +296,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'furnace-options',
                     label: 'Furnace Options',
-                    image: './assets/images/tab-furnace-options.jpg',
+                    image: SHARED_TAB_IMAGES[0],
                     title: 'Furnace Options',
                     text:
                         'Furnace projects can involve replacement, service, safety checks or efficiency comparisons.',
@@ -304,7 +311,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'heat-pumps',
                     label: 'Heat Pumps',
-                    image: './assets/images/tab-heat-pumps.jpg',
+                    image: SHARED_TAB_IMAGES[1],
                     title: 'Heat Pumps',
                     text:
                         'Heat pumps may support efficient heating and cooling depending on home needs and climate conditions.',
@@ -319,7 +326,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'boiler-categories',
                     label: 'Boiler Categories',
-                    image: './assets/images/tab-boiler-categories.jpg',
+                    image: SHARED_TAB_IMAGES[2],
                     title: 'Boiler Categories',
                     text:
                         'Boiler-related requests may include service categories, replacement planning or system checks.',
@@ -334,7 +341,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'seasonal-heating-checks',
                     label: 'Seasonal Heating Checks',
-                    image: './assets/images/tab-seasonal-heating-checks.jpg',
+                    image: SHARED_TAB_IMAGES[3],
                     title: 'Seasonal Heating Checks',
                     text:
                         'Seasonal checks can help homeowners compare maintenance options before colder months.',
@@ -393,7 +400,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'airflow-review',
                     label: 'Airflow Review',
-                    image: './assets/images/tab-airflow-review.jpg',
+                    image: SHARED_TAB_IMAGES[0],
                     title: 'Airflow Review',
                     text:
                         'Airflow reviews may help identify comfort inconsistencies, blocked vents or system balance concerns.',
@@ -408,7 +415,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'filter-duct-care',
                     label: 'Filter & Duct Care',
-                    image: './assets/images/tab-filter-duct-care.jpg',
+                    image: SHARED_TAB_IMAGES[1],
                     title: 'Filter & Duct Care',
                     text:
                         'Filter and duct care categories may support airflow quality and system performance.',
@@ -423,7 +430,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'seasonal-tune-up',
                     label: 'Seasonal Tune-Up',
-                    image: './assets/images/tab-seasonal-tune-up.jpg',
+                    image: SHARED_TAB_IMAGES[2],
                     title: 'Seasonal Tune-Up',
                     text:
                         'Seasonal tune-ups can help homeowners compare maintenance options before peak heating or cooling seasons.',
@@ -438,7 +445,7 @@ window.SITE_CONFIG = {
                 {
                     id: 'indoor-comfort-support',
                     label: 'Indoor Comfort Support',
-                    image: './assets/images/tab-indoor-comfort-support.jpg',
+                    image: SHARED_TAB_IMAGES[3],
                     title: 'Indoor Comfort Support',
                     text:
                         'Indoor comfort support may include airflow, humidity, filtration or system performance discussions.',
