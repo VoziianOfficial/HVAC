@@ -455,7 +455,7 @@
             setMobileMenuInert(menu, true);
             state.previousFocus?.focus?.();
             state.previousFocus = null;
-        }, 220);
+        }, 580);
     };
 
     const trapMobileMenuFocus = (event) => {
@@ -479,31 +479,46 @@
         }
     };
 
-    const initMobileMenu = () => {
-        buildMobileMenu();
+  const initMobileMenu = () => {
+    buildMobileMenu();
 
-        document.addEventListener('click', (event) => {
-            const openButton = event.target.closest('[data-mobile-menu-open]');
-            const closeButton = event.target.closest('[data-mobile-menu-close]');
-            const mobileLink = event.target.closest('#mobileMenu a');
+    document.addEventListener('click', (event) => {
+      const openButton = event.target.closest('[data-mobile-menu-open]');
+      const closeButton = event.target.closest('[data-mobile-menu-close]');
+      const mobileLink = event.target.closest('#mobileMenu a');
 
-            if (openButton) {
-                openMobileMenu();
-            }
+      if (openButton) {
+        event.preventDefault();
 
-            if (closeButton || mobileLink) {
-                closeMobileMenu();
-            }
-        });
+        if (state.mobileMenuOpen) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeMobileMenu();
-            }
+        return;
+      }
 
-            trapMobileMenuFocus(event);
-        });
-    };
+      if (closeButton) {
+        event.preventDefault();
+        closeMobileMenu();
+        return;
+      }
+
+      if (mobileLink) {
+        closeMobileMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+        return;
+      }
+
+      trapMobileMenuFocus(event);
+    });
+  };
 
     const initServicesDropdown = () => {
         const dropdowns = qsa('[data-services-dropdown]');
