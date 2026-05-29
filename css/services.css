@@ -603,6 +603,24 @@
         position: relative;
         top: auto;
     }
+
+    /* tablet: icon right + shorter compare cards */
+    .services-compare__item {
+        grid-template-columns: 1fr 52px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .services-compare__icon {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+    }
 }
 
 @media (max-width: 760px) {

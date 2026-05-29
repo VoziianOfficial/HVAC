@@ -625,6 +625,43 @@
     .service-tabs__media {
         min-height: 360px;
     }
+
+    /* tablet: icons right + shorter cards */
+    .service-intro-card {
+        display: grid;
+        grid-template-columns: 1fr 52px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .service-intro-card__icon {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        justify-self: end;
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+        margin-bottom: 0;
+    }
+
+    .service-check-card {
+        grid-template-columns: 1fr 52px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .service-check-card__icon {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+    }
 }
 
 @media (max-width: 760px) {
