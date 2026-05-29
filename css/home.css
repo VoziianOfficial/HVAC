@@ -436,7 +436,7 @@
 .home-model__floating {
     position: absolute;
     left: 0;
-    bottom: 34px;
+    bottom: -25px;
     width: min(82%, 360px);
     padding: 22px;
     border: 1px solid rgba(126, 207, 221, 0.22);
@@ -1042,5 +1042,37 @@
     .home-hero__meta-row .home-hero__controls {
         justify-self: center;
         width: auto;
+    }
+}
+
+/* ==================================================
+   HOME FAQ
+================================================== */
+
+.home-faq {
+    background:
+        linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
+}
+
+.home-faq__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
+    gap: clamp(34px, 6vw, 76px);
+    align-items: start;
+}
+
+.home-faq__content {
+    position: sticky;
+    top: calc(var(--header-height) + 34px);
+}
+
+@media (max-width: 1024px) {
+    .home-faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-faq__content {
+        position: relative;
+        top: auto;
     }
 }
