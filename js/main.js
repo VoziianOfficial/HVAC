@@ -438,25 +438,25 @@
         }, 30);
     };
 
-    const closeMobileMenu = () => {
-        const menu = qs('#mobileMenu');
-        const trigger = qs('[data-mobile-menu-open]');
-        if (!menu || !state.mobileMenuOpen) return;
+  const closeMobileMenu = () => {
+    const menu = qs('#mobileMenu');
+    const trigger = qs('[data-mobile-menu-open]');
+    if (!menu || !state.mobileMenuOpen) return;
 
-        state.mobileMenuOpen = false;
+    state.mobileMenuOpen = false;
 
-        document.documentElement.classList.remove('is-menu-open');
-        document.body.classList.remove('is-menu-open');
+    menu.classList.remove('is-open');
+    trigger?.setAttribute('aria-expanded', 'false');
 
-        menu.classList.remove('is-open');
-        trigger?.setAttribute('aria-expanded', 'false');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('is-menu-open');
+      document.body.classList.remove('is-menu-open');
 
-        window.setTimeout(() => {
-            setMobileMenuInert(menu, true);
-            state.previousFocus?.focus?.();
-            state.previousFocus = null;
-        }, 580);
-    };
+      setMobileMenuInert(menu, true);
+      state.previousFocus?.focus?.();
+      state.previousFocus = null;
+    }, 580);
+  };
 
     const trapMobileMenuFocus = (event) => {
         if (!state.mobileMenuOpen || event.key !== 'Tab') return;

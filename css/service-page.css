@@ -152,7 +152,7 @@
 .service-intro__badge {
     position: absolute;
     left: 0;
-    bottom: 34px;
+    bottom: -15px;
     width: min(86%, 390px);
     padding: 22px;
     border: 1px solid rgba(126, 207, 221, 0.22);
