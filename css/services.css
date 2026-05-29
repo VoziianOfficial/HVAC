@@ -816,3 +816,285 @@
     transform: scale(1.08);
     box-shadow: 0 0 0 6px rgba(255, 138, 31, 0.12);
 }
+
+/* ==================================================
+   SERVICES FLOW — COMPACT AIRFLOW CARDS
+================================================== */
+
+.services-flow {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Decorative airflow background */
+.services-flow::before,
+.services-flow::after {
+    content: '';
+    position: absolute;
+    left: -8%;
+    right: -8%;
+    z-index: 0;
+    height: 120px;
+    pointer-events: none;
+    border-top: 2px solid rgba(126, 207, 221, 0.16);
+    border-radius: 50%;
+    opacity: 0.75;
+    transform: rotate(-4deg);
+    animation: servicesAirFlow 12s linear infinite;
+}
+
+.services-flow::before {
+    top: 30%;
+}
+
+.services-flow::after {
+    top: 58%;
+    border-color: rgba(255, 138, 31, 0.13);
+    animation-duration: 15s;
+    animation-delay: -4s;
+}
+
+.services-flow>.container {
+    position: relative;
+    z-index: 2;
+}
+
+.services-flow .process-grid {
+    position: relative;
+    z-index: 2;
+    gap: 14px;
+}
+
+/* Thin moving line behind cards */
+.services-flow .process-grid::before {
+    content: '';
+    position: absolute;
+    left: 3%;
+    right: 3%;
+    top: 42%;
+    z-index: -1;
+    height: 2px;
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg,
+            rgba(126, 207, 221, 0),
+            rgba(126, 207, 221, 0.34),
+            rgba(255, 138, 31, 0.22),
+            rgba(126, 207, 221, 0));
+    opacity: 0.72;
+}
+
+/* Disable old connector from global process-card */
+.services-flow .process-card::after {
+    display: none !important;
+}
+
+/* Compact card */
+.services-flow .process-card {
+    position: relative;
+    isolation: isolate;
+    min-height: 156px;
+    padding: 22px 82px 22px 22px;
+    gap: 8px;
+    border: 1px solid rgba(126, 207, 221, 0.17);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(126, 207, 221, 0.12), transparent 34%),
+        rgba(255, 255, 255, 0.045);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
+}
+
+/* alternating card colors */
+.services-flow .process-card:nth-child(even) {
+    border-color: rgba(255, 138, 31, 0.18);
+    background:
+        radial-gradient(circle at 88% 18%, rgba(255, 138, 31, 0.13), transparent 34%),
+        rgba(255, 255, 255, 0.045);
+}
+
+/* top glowing line */
+.services-flow .process-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--color-orange));
+    opacity: 0;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+/* icon right */
+.services-flow .process-card__icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(126, 207, 221, 0.24);
+    border-radius: 16px;
+    color: var(--aqua);
+    background: rgba(126, 207, 221, 0.1);
+    transition:
+        color var(--transition),
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.services-flow .process-card:nth-child(even) .process-card__icon {
+    color: var(--color-orange);
+    border-color: rgba(255, 138, 31, 0.28);
+    background: rgba(255, 138, 31, 0.1);
+}
+
+.services-flow .process-card__icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+/* text */
+.services-flow .process-card h3 {
+    max-width: 230px;
+    color: var(--color-text-light);
+    font-size: 1.08rem;
+    line-height: 1.12;
+}
+
+.services-flow .process-card p {
+    max-width: 250px;
+    color: rgba(248, 251, 255, 0.68);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+/* hover */
+.services-flow .process-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(126, 207, 221, 0.36);
+    background:
+        radial-gradient(circle at 88% 18%, rgba(126, 207, 221, 0.17), transparent 34%),
+        rgba(255, 255, 255, 0.07);
+    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.18);
+}
+
+.services-flow .process-card:nth-child(even):hover {
+    border-color: rgba(255, 138, 31, 0.38);
+    background:
+        radial-gradient(circle at 88% 18%, rgba(255, 138, 31, 0.17), transparent 34%),
+        rgba(255, 255, 255, 0.07);
+}
+
+.services-flow .process-card:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.services-flow .process-card:hover .process-card__icon {
+    transform: translateY(-2px) rotate(-2deg);
+    color: #ffffff;
+    background: var(--color-orange);
+    border-color: rgba(255, 138, 31, 0.62);
+    box-shadow: 0 14px 30px rgba(255, 138, 31, 0.18);
+}
+
+.services-flow .process-card:nth-child(even):hover .process-card__icon {
+    color: var(--color-navy-950);
+    background: var(--aqua);
+    border-color: rgba(126, 207, 221, 0.62);
+    box-shadow: 0 14px 30px rgba(126, 207, 221, 0.18);
+}
+
+/* animation */
+@keyframes servicesAirFlow {
+    0% {
+        transform: translateX(-28px) rotate(-4deg);
+        opacity: 0.45;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateX(34px) rotate(-4deg);
+        opacity: 0.45;
+    }
+}
+
+/* tablet */
+@media (max-width: 1180px) {
+    .services-flow .process-grid::before {
+        display: none;
+    }
+
+    .services-flow .process-card {
+        min-height: 146px;
+    }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+    .services-flow .process-card {
+        min-height: auto;
+        padding: 18px 76px 18px 18px;
+        border-radius: 20px;
+    }
+
+    .services-flow .process-card__icon {
+        top: 18px;
+        right: 18px;
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
+    }
+
+    .services-flow .process-card__icon svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .services-flow .process-card h3,
+    .services-flow .process-card p {
+        max-width: none;
+    }
+
+    .services-flow .process-card h3 {
+        padding-right: 8px;
+        font-size: 1.02rem;
+    }
+
+    .services-flow .process-card p {
+        font-size: 0.82rem;
+    }
+
+    .services-flow::before,
+    .services-flow::after {
+        opacity: 0.35;
+    }
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .services-flow::before,
+    .services-flow::after {
+        animation: none !important;
+    }
+}

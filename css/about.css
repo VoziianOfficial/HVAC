@@ -509,7 +509,6 @@
 }
 
 .about-marquee__item span {
-    display: block;
     color: rgba(248, 251, 255, 0.64);
     font-size: 0.78rem;
     line-height: 1.3;
