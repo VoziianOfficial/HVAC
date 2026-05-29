@@ -2253,18 +2253,32 @@ body>[data-site-header].site-header {
 }
 
 /* ==================================================
-   FINAL STICKY HEADER FIX
+   REDUCED SECTION PADDING — SELECTED SECTIONS
 ================================================== */
 
-body>.site-header,
-body>[data-site-header].site-header {
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 10000 !important;
-    width: 100% !important;
+.section.home-model,
+.section.home-services,
+.section.contact-verify {
+    padding-top: clamp(36px, 4vw, 59px) !important;
+    padding-bottom: clamp(36px, 4vw, 59px) !important;
 }
 
-.site-header {
-    transform: none !important;
-    will-change: auto;
+@media (max-width: 860px) {
+
+    .section.home-model,
+    .section.home-services,
+    .section.contact-verify {
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .section.home-model,
+    .section.home-services,
+    .section.contact-verify {
+        padding-top: 27px !important;
+        padding-bottom: 27px !important;
+    }
 }
