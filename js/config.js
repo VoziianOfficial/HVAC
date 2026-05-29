@@ -34,6 +34,33 @@ window.SITE_CONFIG = {
         full: '2450 North Central Avenue, Phoenix, AZ 85004, USA'
     },
 
+        replaceMap: {
+        companyNames: [
+            'HVAC'
+        ],
+
+        emails: [
+            'hello@hvacmatch.com'
+        ],
+
+        phones: [
+            '+18885550144',
+            '(888) 555-0144',
+            '888-555-0144',
+            '888 555 0144'
+        ],
+
+        addresses: [
+            '2450 North Central Avenue, Phoenix, AZ 85004, USA',
+            '2450 North Central Avenue',
+            'Phoenix, AZ 85004, USA'
+        ],
+
+        companyIds: [
+            'HVAC-MATCH-2026'
+        ]
+    },
+
     serviceArea:
         'Independent HVAC provider matching across selected areas in the United States',
 

@@ -703,10 +703,109 @@
     setText('[data-legal-notice]', values.legalNotice);
 
     /* =========================
-       Flexible config attributes
-       Example:
-       <span data-config-text="contact.email"></span>
-    ========================== */
+   Auto replace hardcoded old values
+   No HTML markup changes needed
+========================== */
+
+    const replaceMap = CONFIG.replaceMap || {};
+
+    const autoReplacements = [
+      ...(replaceMap.companyNames || []).map((oldValue) => ({
+        from: oldValue,
+        to: values.companyName
+      })),
+
+      ...(replaceMap.companyIds || []).map((oldValue) => ({
+        from: oldValue,
+        to: values.companyId
+      })),
+
+      ...(replaceMap.emails || []).map((oldValue) => ({
+        from: oldValue,
+        to: values.email
+      })),
+
+      ...(replaceMap.phones || []).map((oldValue) => ({
+        from: oldValue,
+        to: values.phoneDisplay
+      })),
+
+      ...(replaceMap.addresses || []).map((oldValue) => ({
+        from: oldValue,
+        to: values.address
+      }))
+    ].filter((item) => item.from && item.to && item.from !== item.to);
+
+    const replaceHardcodedValues = (text) => {
+      if (typeof text !== 'string' || !text.trim()) {
+        return text;
+      }
+
+      let result = text;
+
+      autoReplacements.forEach(({ from, to }) => {
+        result = result.split(from).join(to);
+      });
+
+      return result;
+    };
+
+    const shouldSkipNode = (node) => {
+      const parent = node.parentElement;
+
+      if (!parent) return true;
+
+      return ['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION'].includes(parent.tagName);
+    };
+
+    const hardcodedWalker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (shouldSkipNode(node)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          return autoReplacements.some(({ from }) => node.nodeValue.includes(from))
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
+        }
+      }
+    );
+
+    const hardcodedTextNodes = [];
+
+    while (hardcodedWalker.nextNode()) {
+      hardcodedTextNodes.push(hardcodedWalker.currentNode);
+    }
+
+    hardcodedTextNodes.forEach((node) => {
+      node.nodeValue = replaceHardcodedValues(node.nodeValue);
+    });
+
+    qsa('[title], [aria-label], [alt], [placeholder], [href], [content]').forEach((el) => {
+      ['title', 'aria-label', 'alt', 'placeholder', 'href', 'content'].forEach((attribute) => {
+        if (!el.hasAttribute(attribute)) return;
+
+        const currentValue = el.getAttribute(attribute);
+        const nextValue = replaceHardcodedValues(currentValue);
+
+        if (currentValue !== nextValue) {
+          el.setAttribute(attribute, nextValue);
+        }
+      });
+    });
+
+    qsa('a[href^="tel:"]').forEach((link) => {
+      link.setAttribute('href', `tel:${values.phoneRaw}`);
+    });
+
+    qsa('a[href^="mailto:"]').forEach((link) => {
+      link.setAttribute('href', `mailto:${values.email}`);
+    });
+
+
 
     qsa('[data-config-text]').forEach((el) => {
       const path = el.getAttribute('data-config-text');
@@ -764,9 +863,6 @@
       node.nodeValue = replaceTokens(node.nodeValue);
     });
 
-    /* =========================
-       Replace tokens in useful attributes
-    ========================== */
 
     qsa('[title], [aria-label], [alt], [placeholder], [href], meta[content]').forEach((el) => {
       ['title', 'aria-label', 'alt', 'placeholder', 'href', 'content'].forEach((attribute) => {
@@ -781,9 +877,7 @@
       });
     });
 
-    /* =========================
-       Document title and meta description
-    ========================== */
+
 
     document.title = replaceTokens(document.title);
 
