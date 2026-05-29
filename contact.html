@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact HVAC | Request Provider Matching</title>
+    <meta name="description"
+        content="Request HVAC provider matching and compare independent local provider options for cooling, heating, repair and ventilation needs." />
+
+    <link rel="icon" type="image/svg+xml" href="./assets/logo/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo/favicon.ico" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+    <div data-site-header></div>
+
+    <main id="mainContent">
+        <!-- ==================================================
+      1. HERO
+    =================================================== -->
+        <section class="page-hero contact-hero" aria-labelledby="contactHeroTitle">
+            <div class="page-hero__bg" aria-hidden="true">
+                <img src="./assets/images/hero-contact.jpg" alt="" width="1920" height="980" />
+            </div>
+
+            <div class="page-hero__overlay" aria-hidden="true"></div>
+
+            <div class="container">
+                <div class="page-hero__inner">
+                    <p class="page-hero__kicker">Request provider matching</p>
+
+                    <h1 id="contactHeroTitle">
+                        Share your HVAC project and compare provider options.
+                    </h1>
+
+                    <p>
+                        Tell us what type of HVAC project you are considering. HVAC helps
+                        homeowners compare independent provider options, availability and
+                        quote details before choosing who to contact.
+                    </p>
+
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="#contactForm">
+                            Start Request
+                        </a>
+
+                        <a class="btn btn--outline" href="tel:+18885550144" data-phone-link>
+                            <span data-phone-text>Call Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      2–3. CONTACT INTRO + ONE FORM
+    =================================================== -->
+        <section class="section contact-intro" aria-labelledby="contactIntroTitle">
+            <div class="container contact-intro__grid">
+                <div class="contact-intro__content" data-reveal>
+                    <div>
+                        <p class="section-kicker">Contact HVAC</p>
+
+                        <h2 class="section-title" id="contactIntroTitle">
+                            One request. Clearer HVAC provider comparison.
+                        </h2>
+                    </div>
+
+                    <p class="contact-intro__text">
+                        Use this form to describe your HVAC category, location and timing.
+                        HVAC does not perform HVAC work directly. The platform helps users
+                        compare independent provider options and remember what to verify.
+                    </p>
+
+                    <div class="contact-card-grid" aria-label="Contact highlights">
+                        <article class="contact-card">
+                            <span class="contact-card__icon">
+                                <i data-lucide="phone" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <h3>Phone</h3>
+                                <p>
+                                    <a href="tel:+18885550144" data-phone-link>
+                                        <span data-phone-text>(888) 555-0144</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="contact-card">
+                            <span class="contact-card__icon">
+                                <i data-lucide="mail" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <h3>Email</h3>
+                                <p>
+                                    <a href="mailto:hello@hvacmatch.com" data-email-link>
+                                        <span data-email-text>hello@hvacmatch.com</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="contact-card">
+                            <span class="contact-card__icon">
+                                <i data-lucide="map-pin" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <h3>Address</h3>
+                                <p data-address-text>
+                                    2450 North Central Avenue, Phoenix, AZ 85004, USA
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="contact-card">
+                            <span class="contact-card__icon">
+                                <i data-lucide="clock" aria-hidden="true"></i>
+                            </span>
+
+                            <div>
+                                <h3>Support hours</h3>
+                                <p>Mon–Fri, 8:00 AM–7:00 PM</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="contact-form-panel" id="contactForm" data-reveal>
+                    <div class="contact-form-panel__head">
+                        <p class="contact-form-panel__badge">
+                            <i data-lucide="clipboard-list" aria-hidden="true"></i>
+                            Matching request
+                        </p>
+
+                        <h2 data-form-title>Request HVAC provider matching</h2>
+
+                        <p data-form-text>
+                            Share a few details and compare independent provider options for
+                            your HVAC project.
+                        </p>
+                    </div>
+
+                    <form class="contact-form" novalidate data-contact-form>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label class="form-label" for="fullName">Full Name</label>
+                                <input class="form-input" id="fullName" name="fullName" type="text" autocomplete="name"
+                                    placeholder="Your name" required data-form-required />
+                                <span class="form-error-text">Please enter your full name.</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="email">Email</label>
+                                <input class="form-input" id="email" name="email" type="email" autocomplete="email"
+                                    placeholder="you@example.com" required data-form-required />
+                                <span class="form-error-text">Please enter a valid email.</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="phone">Phone</label>
+                                <input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel"
+                                    placeholder="(555) 000-0000" required data-form-required />
+                                <span class="form-error-text">Please enter your phone number.</span>
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="zipCode">ZIP Code</label>
+                                <input class="form-input" id="zipCode" name="zipCode" type="text" inputmode="numeric"
+                                    autocomplete="postal-code" placeholder="85004" required data-form-required />
+                                <span class="form-error-text">Please enter your ZIP code.</span>
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label class="form-label" for="serviceInterest">Service Interest</label>
+                                <select class="form-select" id="serviceInterest" name="serviceInterest" required
+                                    data-form-required>
+                                    <option value="">Select a service category</option>
+                                    <option value="AC Installation">AC Installation</option>
+                                    <option value="HVAC Repair">HVAC Repair</option>
+                                    <option value="Heating Systems">Heating Systems</option>
+                                    <option value="Ventilation & Maintenance">Ventilation &amp; Maintenance</option>
+                                </select>
+                                <span class="form-error-text">Please select a service category.</span>
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label class="form-label" for="projectDetails">Project Details</label>
+                                <textarea class="form-textarea" id="projectDetails" name="projectDetails"
+                                    placeholder="Tell us about the system, timing, issue or project category." required
+                                    data-form-required></textarea>
+                                <span class="form-error-text">Please describe your request.</span>
+                            </div>
+
+                            <div class="form-field form-field--full">
+                                <label class="form-checkbox" for="consent">
+                                    <input id="consent" name="consent" type="checkbox" required data-form-required />
+                                    <span class="form-checkbox__box" aria-hidden="true"></span>
+                                    <span class="form-checkbox__text">
+                                        I agree to be contacted about my request and understand that
+                                        HVAC connects users with independent provider options.
+                                    </span>
+                                </label>
+                                <span class="form-error-text">Please confirm your consent.</span>
+                            </div>
+
+                            <div class="form-message form-message--success" role="status" aria-live="polite"
+                                data-form-success>
+                                Your request has been received. A matching specialist may follow
+                                up with next steps.
+                            </div>
+
+                            <div class="form-message form-message--error" role="alert" data-form-error>
+                                Please check the required fields and try again.
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn--primary" type="submit">
+                                    Submit Request
+                                </button>
+
+                                <p class="contact-form__fineprint">
+                                    <strong>Note:</strong> HVAC is not a contractor and does not
+                                    perform HVAC work directly.
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      4. WHAT HAPPENS AFTER REQUEST
+    =================================================== -->
+        <section class="section contact-after" aria-labelledby="afterTitle">
+            <div class="container">
+                <div class="contact-after__head" data-reveal>
+                    <p class="section-kicker">After you submit</p>
+
+                    <h2 class="section-title" id="afterTitle">
+                        What happens after a matching request?
+                    </h2>
+
+                    <p class="section-text">
+                        The next step is provider comparison — not direct service scheduling
+                        by HVAC.
+                    </p>
+                </div>
+
+                <div class="contact-after__grid">
+                    <article class="contact-step" data-reveal>
+                        <span class="contact-step__number">01</span>
+                        <h3>Your category is reviewed</h3>
+                        <p>
+                            Your request is organized by service category, ZIP code, timing
+                            and project details.
+                        </p>
+                    </article>
+
+                    <article class="contact-step" data-reveal>
+                        <span class="contact-step__number">02</span>
+                        <h3>Provider options may be identified</h3>
+                        <p>
+                            Independent provider options can vary by location, season and
+                            provider availability.
+                        </p>
+                    </article>
+
+                    <article class="contact-step" data-reveal>
+                        <span class="contact-step__number">03</span>
+                        <h3>You compare important terms</h3>
+                        <p>
+                            Review quotes, service scope, timing, licensing, insurance and
+                            warranty details.
+                        </p>
+                    </article>
+
+                    <article class="contact-step" data-reveal>
+                        <span class="contact-step__number">04</span>
+                        <h3>You choose who to contact</h3>
+                        <p>
+                            You decide whether a provider option fits your request and what
+                            questions to ask next.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      5. PROVIDER VERIFICATION REMINDERS
+    =================================================== -->
+        <section class="section contact-verify" aria-labelledby="verifyTitle">
+            <div class="container contact-verify__grid">
+                <div class="contact-verify__content" data-reveal>
+                    <p class="section-kicker">Verification reminders</p>
+
+                    <h2 class="section-title" id="verifyTitle">
+                        Before choosing any HVAC provider, verify the details directly.
+                    </h2>
+
+                    <p class="contact-verify__text">
+                        HVAC can help you compare options, but independent providers control
+                        their own service terms, pricing, availability, credentials and work
+                        quality. Homeowners should confirm all important details before work
+                        begins.
+                    </p>
+
+                    <div class="btn-row">
+                        <a class="btn btn--primary" href="#contactForm">
+                            Start Matching Request
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-verify__panel">
+                    <article class="contact-verify-card" data-reveal>
+                        <span class="contact-verify-card__icon">
+                            <i data-lucide="badge-check" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <h3>License status</h3>
+                            <p>
+                                Ask providers to confirm applicable licensing and local
+                                requirements for the requested work.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="contact-verify-card" data-reveal>
+                        <span class="contact-verify-card__icon">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <h3>Insurance coverage</h3>
+                            <p>
+                                Confirm insurance coverage and liability details directly with
+                                each provider.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="contact-verify-card" data-reveal>
+                        <span class="contact-verify-card__icon">
+                            <i data-lucide="file-text" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <h3>Quote and scope</h3>
+                            <p>
+                                Review what is included, excluded, estimated, optional or
+                                subject to change.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="contact-verify-card" data-reveal>
+                        <span class="contact-verify-card__icon">
+                            <i data-lucide="badge-help" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <h3>Warranty terms</h3>
+                            <p>
+                                Ask about labor coverage, equipment warranty, maintenance terms
+                                and follow-up support.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      6. CONTACT DETAILS FROM CONFIG
+    =================================================== -->
+        <section class="contact-details" aria-labelledby="detailsTitle">
+            <div class="contact-details__bg" aria-hidden="true">
+                <img src="./assets/images/contact-details.jpg" alt="" loading="lazy" width="1920" height="860" />
+            </div>
+
+            <div class="contact-details__overlay" aria-hidden="true"></div>
+
+            <div class="container contact-details__grid">
+                <div class="contact-details__content" data-reveal>
+                    <p class="section-kicker">Contact information</p>
+
+                    <h2 class="section-title" id="detailsTitle">
+                        Reach HVAC or send a matching request online.
+                    </h2>
+
+                    <p class="section-text">
+                        Contact details are managed through the global config file, so phone,
+                        email, address and company information can be updated across the
+                        entire site in one place.
+                    </p>
+
+                    <p class="section-text" data-service-area>
+                        Independent HVAC provider matching across selected areas in the
+                        United States
+                    </p>
+                </div>
+
+                <div class="contact-details__panel" data-reveal>
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-row__icon">
+                            <i data-lucide="phone" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+18885550144" data-phone-link>
+                                <span data-phone-text>(888) 555-0144</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-row__icon">
+                            <i data-lucide="mail" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:hello@hvacmatch.com" data-email-link>
+                                <span data-email-text>hello@hvacmatch.com</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-row__icon">
+                            <i data-lucide="map-pin" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <strong>Address</strong>
+                            <span data-address-text>
+                                2450 North Central Avenue, Phoenix, AZ 85004, USA
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-row">
+                        <span class="contact-detail-row__icon">
+                            <i data-lucide="badge-info" aria-hidden="true"></i>
+                        </span>
+
+                        <div>
+                            <strong>Company ID</strong>
+                            <span data-company-id>HVAC-MATCH-2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      7. LEGAL REMINDER BEFORE FOOTER
+    =================================================== -->
+        <section class="section contact-legal-reminder" aria-labelledby="legalReminderTitle">
+            <div class="container">
+                <div class="contact-legal-reminder__box" data-reveal>
+                    <span class="contact-legal-reminder__icon">
+                        <i data-lucide="scale" aria-hidden="true"></i>
+                    </span>
+
+                    <div>
+                        <h2 id="legalReminderTitle">
+                            Independent provider matching, not direct HVAC work.
+                        </h2>
+
+                        <p data-legal-notice>
+                            HVAC is not a contractor and does not perform HVAC work directly.
+                            Provider availability, service scope, pricing, licensing and
+                            insurance vary by location and provider.
+                        </p>
+                    </div>
+
+                    <a class="btn btn--outline-dark" href="./terms-of-service.html">
+                        Read Terms
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================================================
+      8. CTA BEFORE FOOTER
+    =================================================== -->
+        <section class="final-cta" aria-labelledby="finalCtaTitle">
+            <div class="final-cta__bg" aria-hidden="true">
+                <img src="./assets/images/cta-hvac.jpg" alt="" loading="lazy" width="1920" height="720" />
+            </div>
+
+            <div class="final-cta__overlay" aria-hidden="true"></div>
+
+            <div class="container final-cta__inner">
+                <div>
+                    <h2 id="finalCtaTitle">
+                        Ready to compare HVAC provider options?
+                    </h2>
+
+                    <p>
+                        Share your project category and review independent provider options,
+                        availability and quote details before deciding who to contact.
+                    </p>
+                </div>
+
+                <div class="btn-row">
+                    <a class="btn btn--primary" href="#contactForm">
+                        Compare Providers
+                    </a>
+
+                    <a class="btn btn--outline" href="tel:+18885550144" data-phone-link>
+                        <span>Call Now</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-site-footer></div>
+    <div data-policy-banner></div>
+
+    <script src="./js/config.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>

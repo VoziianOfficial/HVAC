@@ -1,0 +1,731 @@
+/* ==================================================
+   HVAC — SERVICES PAGE
+   File: /css/services.css
+================================================== */
+
+/* ==================================================
+   SERVICES HERO
+================================================== */
+
+.services-hero .page-hero__inner {
+    max-width: 820px;
+}
+
+.services-hero .page-hero__kicker {
+    color: var(--aqua);
+}
+
+/* ==================================================
+   SERVICE SEARCH / NAV STRIP
+================================================== */
+
+.services-nav-strip {
+    position: relative;
+    z-index: 5;
+    margin-top: -38px;
+}
+
+.services-nav-strip__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 14px;
+    border: 1px solid rgba(10, 33, 63, 0.1);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(12px);
+}
+
+.services-nav-strip__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    color: var(--color-navy-900);
+    background: var(--color-aqua-soft);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.services-nav-strip__label svg {
+    width: 17px;
+    height: 17px;
+}
+
+.services-nav-strip__links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.services-nav-strip__link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 10px;
+    align-items: center;
+    min-height: 62px;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 18px;
+    color: var(--color-text-dark);
+    background: transparent;
+    overflow: hidden;
+    transition:
+        background-color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+}
+
+.services-nav-strip__link::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 7px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-orange), var(--aqua));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.services-nav-strip__link:hover,
+.services-nav-strip__link.is-active {
+    border-color: rgba(95, 195, 213, 0.34);
+    background: var(--color-surface);
+    transform: translateY(-1px);
+}
+
+.services-nav-strip__link:hover::after,
+.services-nav-strip__link.is-active::after {
+    transform: scaleX(1);
+}
+
+.services-nav-strip__icon {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 14px;
+    color: var(--color-navy-900);
+    background: var(--color-aqua-soft);
+}
+
+.services-nav-strip__link:nth-child(3) .services-nav-strip__icon {
+    color: #ffffff;
+    background: var(--color-orange);
+}
+
+.services-nav-strip__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.services-nav-strip__link strong {
+    display: block;
+    margin-bottom: 2px;
+    font-family: var(--font-heading);
+    font-size: 0.92rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.services-nav-strip__link small {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.72rem;
+    line-height: 1.3;
+}
+
+/* ==================================================
+   SERVICES CATALOG
+================================================== */
+
+.services-catalog {
+    background:
+        linear-gradient(180deg, var(--color-white) 0%, var(--color-surface) 100%);
+}
+
+.services-catalog__head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.5fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(32px, 5vw, 58px);
+}
+
+.services-catalog__note {
+    padding: 22px;
+    border: 1px solid rgba(10, 33, 63, 0.1);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(7, 26, 51, 0.06);
+}
+
+.services-catalog__note h3 {
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.services-catalog__note p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.services-catalog__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.services-catalog__grid .service-card__link {
+    min-height: 390px;
+}
+
+/* ==================================================
+   MATCHING FLOW SECTION
+================================================== */
+
+.services-flow {
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 16% 14%, rgba(126, 207, 221, 0.16), transparent 34%),
+        radial-gradient(circle at 86% 82%, rgba(255, 138, 31, 0.12), transparent 34%),
+        linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 54%, var(--color-navy-800) 100%);
+}
+
+.services-flow__head {
+    display: grid;
+    justify-items: center;
+    max-width: 760px;
+    margin: 0 auto clamp(34px, 5vw, 56px);
+    text-align: center;
+}
+
+.services-flow__head .section-kicker::before {
+    display: none;
+}
+
+.services-flow__head .section-title {
+    color: var(--color-text-light);
+}
+
+.services-flow__head .section-text {
+    color: rgba(248, 251, 255, 0.72);
+}
+
+/* ==================================================
+   HOMEOWNER COMPARE SECTION
+================================================== */
+
+.services-compare {
+    background:
+        linear-gradient(180deg, var(--color-surface) 0%, #ffffff 100%);
+}
+
+.services-compare__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
+    gap: clamp(32px, 5vw, 72px);
+    align-items: start;
+}
+
+.services-compare__sticky {
+    position: sticky;
+    top: calc(var(--header-height) + 34px);
+    display: grid;
+    gap: 20px;
+}
+
+.services-compare__text {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.services-compare__panel {
+    padding: clamp(20px, 4vw, 32px);
+    border: 1px solid rgba(10, 33, 63, 0.1);
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow: var(--shadow-card);
+}
+
+.services-compare__list {
+    display: grid;
+    gap: 14px;
+}
+
+.services-compare__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 18px;
+    border: 1px solid rgba(10, 33, 63, 0.1);
+    border-radius: 20px;
+    background:
+        linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
+    overflow: hidden;
+    transition:
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.services-compare__item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--color-orange));
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.services-compare__item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(95, 195, 213, 0.36);
+    box-shadow: 0 16px 38px rgba(7, 26, 51, 0.08);
+}
+
+.services-compare__item:hover::before {
+    opacity: 1;
+}
+
+.services-compare__icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border-radius: 17px;
+    color: var(--color-navy-900);
+    background: var(--color-aqua-soft);
+}
+
+.services-compare__item:nth-child(even) .services-compare__icon {
+    color: #ffffff;
+    background: var(--color-orange);
+}
+
+.services-compare__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.services-compare__item h3 {
+    margin-bottom: 6px;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.services-compare__item p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.52;
+}
+
+/* ==================================================
+   DARK HVAC TOOLS / AIRFLOW SECTION
+================================================== */
+
+.services-tools {
+    position: relative;
+    isolation: isolate;
+    min-height: 560px;
+    padding: clamp(72px, 9vw, 124px) 0;
+    color: var(--color-text-light);
+    background: var(--color-navy-950);
+    overflow: hidden;
+}
+
+.services-tools__bg,
+.services-tools__bg img,
+.services-tools__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.services-tools__bg {
+    z-index: -5;
+}
+
+.services-tools__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.services-tools__overlay {
+    z-index: -4;
+    background:
+        linear-gradient(90deg, rgba(4, 18, 36, 0.97) 0%, rgba(4, 18, 36, 0.86) 48%, rgba(4, 18, 36, 0.42) 100%),
+        radial-gradient(circle at 24% 32%, rgba(126, 207, 221, 0.18), transparent 34%),
+        radial-gradient(circle at 74% 70%, rgba(255, 138, 31, 0.14), transparent 32%);
+}
+
+.services-tools__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(320px, 0.74fr);
+    gap: clamp(34px, 6vw, 82px);
+    align-items: center;
+}
+
+.services-tools__content {
+    display: grid;
+    gap: 22px;
+    max-width: 640px;
+}
+
+.services-tools__content .section-title {
+    color: var(--color-text-light);
+}
+
+.services-tools__content .section-text {
+    color: rgba(248, 251, 255, 0.76);
+}
+
+.services-tools__visual {
+    position: relative;
+    min-height: 430px;
+}
+
+.services-tools__orb {
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(126, 207, 221, 0.18);
+    border-radius: 34px;
+    background:
+        radial-gradient(circle at 22% 22%, rgba(126, 207, 221, 0.18), transparent 34%),
+        radial-gradient(circle at 78% 70%, rgba(255, 138, 31, 0.16), transparent 34%),
+        rgba(255, 255, 255, 0.045);
+    box-shadow: var(--shadow-dark);
+    backdrop-filter: blur(8px);
+}
+
+.services-tools__line {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(126, 207, 221, 0.46), transparent);
+}
+
+.services-tools__line:nth-child(1) {
+    top: 26%;
+}
+
+.services-tools__line:nth-child(2) {
+    top: 50%;
+    background: linear-gradient(90deg, transparent, rgba(255, 138, 31, 0.42), transparent);
+}
+
+.services-tools__line:nth-child(3) {
+    top: 74%;
+}
+
+.services-tools__cards {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 12px;
+    padding: 34px;
+}
+
+.services-tools__mini {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+    align-items: center;
+    max-width: 330px;
+    padding: 14px;
+    border: 1px solid rgba(126, 207, 221, 0.18);
+    border-radius: 18px;
+    background: rgba(4, 18, 36, 0.62);
+    backdrop-filter: blur(8px);
+}
+
+.services-tools__mini:nth-child(2) {
+    margin-left: auto;
+}
+
+.services-tools__mini:nth-child(3) {
+    margin-left: 34px;
+}
+
+.services-tools__mini-icon {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 15px;
+    color: var(--aqua);
+    background: rgba(126, 207, 221, 0.1);
+}
+
+.services-tools__mini:nth-child(2) .services-tools__mini-icon {
+    color: var(--color-orange);
+    background: rgba(255, 138, 31, 0.1);
+}
+
+.services-tools__mini-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.services-tools__mini strong {
+    display: block;
+    margin-bottom: 2px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.services-tools__mini span {
+    display: block;
+    color: rgba(248, 251, 255, 0.66);
+    font-size: 0.78rem;
+    line-height: 1.38;
+}
+
+/* ==================================================
+   SERVICE NOTICE
+================================================== */
+
+.services-notice {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    align-items: start;
+    margin-top: clamp(28px, 4vw, 42px);
+    padding: 22px;
+    border: 1px solid rgba(126, 207, 221, 0.2);
+    border-radius: 24px;
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at top left, rgba(126, 207, 221, 0.12), transparent 42%),
+        linear-gradient(145deg, rgba(4, 18, 36, 0.94), rgba(7, 26, 51, 0.94));
+    box-shadow: var(--shadow-dark);
+}
+
+.services-notice__icon {
+    display: grid;
+    width: 56px;
+    height: 56px;
+    place-items: center;
+    border-radius: 18px;
+    color: var(--aqua);
+    background: rgba(126, 207, 221, 0.1);
+}
+
+.services-notice__icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.services-notice h3 {
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+    font-size: 1.18rem;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+}
+
+.services-notice p {
+    max-width: 860px;
+    color: rgba(248, 251, 255, 0.7);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1180px) {
+    .services-catalog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-catalog__grid .service-card__link {
+        min-height: 340px;
+    }
+
+    .services-nav-strip__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .services-nav-strip__links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-tools__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .services-tools__visual {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .services-catalog__head {
+        grid-template-columns: 1fr;
+    }
+
+    .services-compare__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-compare__sticky {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .services-nav-strip {
+        margin-top: 0;
+        padding-top: 16px;
+        background: var(--color-white);
+    }
+
+    .services-nav-strip__links {
+        grid-template-columns: 1fr;
+    }
+
+    .services-nav-strip__label {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .services-catalog__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-catalog__grid .service-card__link {
+        min-height: 292px;
+    }
+
+    .services-compare__panel {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .services-compare__item {
+        grid-template-columns: 46px 1fr;
+        padding: 15px;
+    }
+
+    .services-compare__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+    }
+
+    .services-tools {
+        min-height: auto;
+        padding: 64px 0;
+    }
+
+    .services-tools__overlay {
+        background:
+            linear-gradient(90deg, rgba(4, 18, 36, 0.96) 0%, rgba(4, 18, 36, 0.88) 100%),
+            radial-gradient(circle at 24% 32%, rgba(126, 207, 221, 0.16), transparent 34%);
+    }
+
+    .services-tools__visual {
+        min-height: auto;
+    }
+
+    .services-tools__orb {
+        display: none;
+    }
+
+    .services-tools__cards {
+        padding: 0;
+    }
+
+    .services-tools__mini,
+    .services-tools__mini:nth-child(2),
+    .services-tools__mini:nth-child(3) {
+        max-width: none;
+        margin-left: 0;
+    }
+
+    .services-tools__line {
+        display: none;
+    }
+
+    .services-notice {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-nav-strip__link {
+        grid-template-columns: 36px 1fr;
+        min-height: 58px;
+    }
+
+    .services-nav-strip__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .services-catalog__note {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .services-compare__item {
+        grid-template-columns: 1fr;
+    }
+
+    .services-compare__icon {
+        margin-bottom: 2px;
+    }
+
+    .services-tools__mini {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .services-tools__mini-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.services-nav-strip__link.is-muted {
+    opacity: 0.62;
+}
+
+.service-card.is-keyboard-active .service-card__link {
+    border-color: rgba(126, 207, 221, 0.52);
+    box-shadow: var(--shadow-card);
+}

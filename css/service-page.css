@@ -1,0 +1,725 @@
+/* ==================================================
+   HVAC — SERVICE PAGE SHARED STYLES
+   File: /css/service-page.css
+================================================== */
+
+/* ==================================================
+   SERVICE HERO
+================================================== */
+
+.service-hero .page-hero__inner {
+    max-width: 850px;
+}
+
+.service-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.service-hero__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 8px 12px;
+    border: 1px solid rgba(126, 207, 221, 0.24);
+    border-radius: 999px;
+    color: rgba(248, 251, 255, 0.78);
+    background: rgba(126, 207, 221, 0.08);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.service-hero__pill svg {
+    width: 16px;
+    height: 16px;
+    color: var(--aqua);
+}
+
+/* ==================================================
+   SERVICE INTRO
+================================================== */
+
+.service-intro {
+    background:
+        linear-gradient(180deg, var(--color-white) 0%, var(--color-surface) 100%);
+}
+
+.service-intro__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(380px, 0.78fr);
+    gap: clamp(34px, 6vw, 80px);
+    align-items: center;
+}
+
+.service-intro__content {
+    display: grid;
+    gap: 22px;
+}
+
+.service-intro__copy {
+    display: grid;
+    gap: 16px;
+    max-width: 680px;
+    color: var(--color-text-muted);
+}
+
+.service-intro__copy strong {
+    color: var(--color-text-dark);
+}
+
+.service-intro__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.service-intro-card {
+    padding: 20px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(7, 26, 51, 0.06);
+}
+
+.service-intro-card__icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    color: var(--color-navy-900);
+    background: var(--color-aqua-soft);
+}
+
+.service-intro-card:nth-child(even) .service-intro-card__icon {
+    color: #ffffff;
+    background: var(--color-orange);
+}
+
+.service-intro-card__icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+.service-intro-card h3 {
+    margin-bottom: 8px;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.service-intro-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.52;
+}
+
+.service-intro__visual {
+    position: relative;
+    min-height: 520px;
+}
+
+.service-intro__photo {
+    position: absolute;
+    inset: 0 0 0 34px;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.service-intro__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-intro__photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(4, 18, 36, 0.02), rgba(4, 18, 36, 0.46)),
+        radial-gradient(circle at 20% 18%, rgba(126, 207, 221, 0.18), transparent 36%);
+}
+
+.service-intro__badge {
+    position: absolute;
+    left: 0;
+    bottom: 34px;
+    width: min(86%, 390px);
+    padding: 22px;
+    border: 1px solid rgba(126, 207, 221, 0.22);
+    border-radius: 24px;
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at top left, rgba(126, 207, 221, 0.14), transparent 42%),
+        linear-gradient(145deg, rgba(4, 18, 36, 0.95), rgba(7, 26, 51, 0.95));
+    box-shadow: var(--shadow-dark);
+}
+
+.service-intro__badge-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    color: var(--aqua);
+    background: rgba(126, 207, 221, 0.1);
+}
+
+.service-intro__badge-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.service-intro__badge h3 {
+    margin-bottom: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.18rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.service-intro__badge p {
+    color: rgba(248, 251, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ==================================================
+   HORIZONTAL TABS
+================================================== */
+
+.service-tabs-section {
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 16% 14%, rgba(126, 207, 221, 0.16), transparent 34%),
+        radial-gradient(circle at 86% 82%, rgba(255, 138, 31, 0.12), transparent 34%),
+        linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 56%, var(--color-navy-800) 100%);
+}
+
+.service-tabs-section__head {
+    display: grid;
+    justify-items: center;
+    max-width: 780px;
+    margin: 0 auto clamp(34px, 5vw, 56px);
+    text-align: center;
+}
+
+.service-tabs-section__head .section-kicker::before {
+    display: none;
+}
+
+.service-tabs-section__head .section-title {
+    color: var(--color-text-light);
+}
+
+.service-tabs-section__head .section-text {
+    color: rgba(248, 251, 255, 0.72);
+}
+
+.service-tabs {
+    display: grid;
+    gap: 22px;
+}
+
+.service-tabs__nav-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-tabs__nav-wrap::before,
+.service-tabs__nav-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 38px;
+    pointer-events: none;
+}
+
+.service-tabs__nav-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--color-navy-950), transparent);
+}
+
+.service-tabs__nav-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--color-navy-900), transparent);
+}
+
+.service-tabs__nav {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 2px 2px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(126, 207, 221, 0.42) transparent;
+}
+
+.service-tabs__nav::-webkit-scrollbar {
+    height: 7px;
+}
+
+.service-tabs__nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.service-tabs__nav::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(126, 207, 221, 0.36);
+}
+
+.service-tabs__button {
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border: 1px solid rgba(126, 207, 221, 0.18);
+    border-radius: 999px;
+    color: rgba(248, 251, 255, 0.72);
+    background: rgba(255, 255, 255, 0.045);
+    font-size: 0.9rem;
+    font-weight: 900;
+    white-space: nowrap;
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        transform var(--transition);
+}
+
+.service-tabs__button::after {
+    content: '';
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 7px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--color-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.service-tabs__button:hover {
+    transform: translateY(-1px);
+    color: #ffffff;
+    border-color: rgba(126, 207, 221, 0.36);
+    background: rgba(126, 207, 221, 0.08);
+}
+
+.service-tabs__button.is-active {
+    color: #ffffff;
+    border-color: rgba(255, 138, 31, 0.5);
+    background: rgba(255, 138, 31, 0.12);
+}
+
+.service-tabs__button.is-active::after {
+    transform: scaleX(1);
+}
+
+.service-tabs__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.78fr);
+    gap: clamp(24px, 5vw, 60px);
+    align-items: stretch;
+    padding: clamp(16px, 3vw, 24px);
+    border: 1px solid rgba(126, 207, 221, 0.2);
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at top left, rgba(126, 207, 221, 0.12), transparent 42%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.035));
+    box-shadow: var(--shadow-dark);
+}
+
+.service-tabs__media {
+    position: relative;
+    min-height: 430px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.service-tabs__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-tabs__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(4, 18, 36, 0.02), rgba(4, 18, 36, 0.55)),
+        radial-gradient(circle at 18% 18%, rgba(126, 207, 221, 0.16), transparent 34%);
+}
+
+.service-tabs__content {
+    display: grid;
+    align-content: center;
+    gap: 20px;
+    padding: clamp(8px, 2vw, 18px);
+}
+
+.service-tabs__content h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.03;
+    letter-spacing: -0.055em;
+}
+
+.service-tabs__content p {
+    color: rgba(248, 251, 255, 0.74);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.service-tabs__compare {
+    display: grid;
+    gap: 10px;
+}
+
+.service-tabs__compare-title {
+    color: var(--aqua);
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.service-tabs__compare ul {
+    display: grid;
+    gap: 10px;
+}
+
+.service-tabs__compare li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 10px;
+    align-items: start;
+    color: rgba(248, 251, 255, 0.76);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.service-tabs__compare li::before {
+    content: '✓';
+    display: grid;
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    border-radius: 999px;
+    color: var(--color-navy-950);
+    background: var(--aqua);
+    font-size: 0.74rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+/* ==================================================
+   PROVIDER CHECKLIST
+================================================== */
+
+.service-checklist {
+    background:
+        linear-gradient(180deg, var(--color-surface) 0%, #ffffff 100%);
+}
+
+.service-checklist__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
+    gap: clamp(34px, 6vw, 76px);
+    align-items: start;
+}
+
+.service-checklist__sticky {
+    position: sticky;
+    top: calc(var(--header-height) + 34px);
+    display: grid;
+    gap: 20px;
+}
+
+.service-checklist__text {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.service-checklist__panel {
+    display: grid;
+    gap: 14px;
+}
+
+.service-check-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 20px;
+    border: 1px solid var(--color-border-light);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(7, 26, 51, 0.06);
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.service-check-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--color-orange));
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.service-check-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(95, 195, 213, 0.36);
+    box-shadow: var(--shadow-soft);
+}
+
+.service-check-card:hover::before {
+    opacity: 1;
+}
+
+.service-check-card__icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border-radius: 17px;
+    color: var(--color-navy-900);
+    background: var(--color-aqua-soft);
+}
+
+.service-check-card:nth-child(even) .service-check-card__icon {
+    color: #ffffff;
+    background: var(--color-orange);
+}
+
+.service-check-card__icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.service-check-card h3 {
+    margin-bottom: 6px;
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.14rem;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+}
+
+.service-check-card p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    line-height: 1.52;
+}
+
+/* ==================================================
+   SERVICE PROCESS
+================================================== */
+
+.service-process {
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 16% 14%, rgba(126, 207, 221, 0.16), transparent 34%),
+        radial-gradient(circle at 86% 82%, rgba(255, 138, 31, 0.12), transparent 34%),
+        linear-gradient(135deg, var(--color-navy-950) 0%, var(--color-navy-900) 56%, var(--color-navy-800) 100%);
+}
+
+.service-process__head {
+    display: grid;
+    justify-items: center;
+    max-width: 760px;
+    margin: 0 auto clamp(34px, 5vw, 56px);
+    text-align: center;
+}
+
+.service-process__head .section-kicker::before {
+    display: none;
+}
+
+.service-process__head .section-title {
+    color: var(--color-text-light);
+}
+
+.service-process__head .section-text {
+    color: rgba(248, 251, 255, 0.72);
+}
+
+/* ==================================================
+   SERVICE FAQ
+================================================== */
+
+.service-faq {
+    background:
+        linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
+}
+
+.service-faq__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
+    gap: clamp(34px, 6vw, 76px);
+    align-items: start;
+}
+
+.service-faq__content {
+    position: sticky;
+    top: calc(var(--header-height) + 34px);
+    display: grid;
+    gap: 20px;
+}
+
+.service-faq__text {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1180px) {
+
+    .service-intro__grid,
+    .service-checklist__grid,
+    .service-faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-intro__visual {
+        min-height: 460px;
+    }
+
+    .service-intro__photo {
+        inset-left: 0;
+    }
+
+    .service-checklist__sticky,
+    .service-faq__content {
+        position: relative;
+        top: auto;
+    }
+
+    .service-tabs__panel {
+        grid-template-columns: 1fr;
+    }
+
+    .service-tabs__media {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 760px) {
+    .service-intro__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-tabs__panel {
+        padding: 14px;
+        border-radius: 24px;
+    }
+
+    .service-tabs__media {
+        min-height: 280px;
+        border-radius: 20px;
+    }
+
+    .service-tabs__content {
+        padding: 6px;
+    }
+
+    .service-check-card {
+        grid-template-columns: 46px 1fr;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .service-check-card__icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .service-intro__visual {
+        min-height: 400px;
+    }
+
+    .service-intro__photo {
+        border-radius: 24px;
+    }
+
+    .service-intro__badge {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        width: auto;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .service-tabs__nav-wrap::before,
+    .service-tabs__nav-wrap::after {
+        display: none;
+    }
+
+    .service-tabs__button {
+        min-height: 44px;
+        padding-inline: 15px;
+        font-size: 0.84rem;
+    }
+
+    .service-tabs__media {
+        min-height: 240px;
+    }
+
+    .service-tabs__compare li {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 460px) {
+    .service-check-card {
+        grid-template-columns: 1fr;
+    }
+
+    .service-check-card__icon {
+        margin-bottom: 2px;
+    }
+
+    .service-hero__meta {
+        display: grid;
+    }
+
+    .service-hero__pill {
+        width: fit-content;
+    }
+}
