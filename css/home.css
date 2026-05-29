@@ -845,3 +845,150 @@
     }
 }
 
+/* ==================================================
+   HOME MODEL MINI CARDS — CLEAN PREMIUM HOVER
+================================================== */
+
+.home-model__mini-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100%;
+    border: 1px solid rgba(10, 33, 63, 0.12);
+    background: #ffffff;
+    box-shadow: 0 14px 34px rgba(7, 26, 51, 0.06);
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background-color var(--transition),
+        box-shadow var(--transition);
+}
+
+.home-model__mini-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    right: 18px;
+    z-index: -1;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--aqua), var(--color-orange));
+    opacity: 0;
+    transform: scaleX(0.25);
+    transform-origin: left;
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+.home-model__mini-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 18% 0%, rgba(126, 207, 221, 0.18), transparent 38%),
+        linear-gradient(180deg, #ffffff 0%, var(--color-surface) 100%);
+    opacity: 0;
+    transition: opacity var(--transition);
+}
+
+.home-model__mini-card>* {
+    position: relative;
+    z-index: 2;
+}
+
+.home-model__mini-card h3 {
+    color: var(--color-text-dark);
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.home-model__mini-card ul {
+    position: relative;
+    z-index: 2;
+}
+
+.home-model__mini-card li {
+    color: var(--color-text-muted);
+    transition:
+        color var(--transition),
+        transform var(--transition);
+}
+
+.home-model__mini-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(95, 195, 213, 0.42);
+    background: #ffffff;
+    box-shadow: 0 24px 58px rgba(7, 26, 51, 0.13);
+}
+
+.home-model__mini-card:hover::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.home-model__mini-card:hover::after {
+    opacity: 1;
+}
+
+.home-model__mini-card:hover h3 {
+    color: var(--color-navy-900);
+    transform: translateY(-1px);
+}
+
+.home-model__mini-card:hover li {
+    color: var(--color-text-dark);
+}
+
+.home-model__mini-card:hover li:nth-child(1) {
+    transform: translateX(3px);
+}
+
+.home-model__mini-card:hover li:nth-child(2) {
+    transform: translateX(6px);
+}
+
+.home-model__mini-card:hover li:nth-child(3) {
+    transform: translateX(9px);
+}
+
+/* Orange card variation */
+.home-model__mini-card--orange::before {
+    background: linear-gradient(90deg, var(--color-orange), var(--aqua));
+}
+
+.home-model__mini-card--orange::after {
+    background:
+        radial-gradient(circle at 18% 0%, rgba(255, 138, 31, 0.18), transparent 38%),
+        linear-gradient(180deg, #ffffff 0%, var(--color-orange-soft) 100%);
+}
+
+.home-model__mini-card--orange:hover {
+    border-color: rgba(255, 138, 31, 0.42);
+}
+
+.home-model__mini-card--orange:hover h3 {
+    color: var(--color-orange-hover);
+}
+
+/* Keep list dots / checks visible */
+.home-model__mini-card li::before {
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.home-model__mini-card:hover li::before {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 5px rgba(126, 207, 221, 0.12);
+}
+
+.home-model__mini-card--orange:hover li::before {
+    box-shadow: 0 0 0 5px rgba(255, 138, 31, 0.14);
+}
