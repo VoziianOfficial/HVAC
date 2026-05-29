@@ -2117,6 +2117,28 @@ main {
         grid-template-columns: 1fr;
     }
 
+    .process-card {
+        grid-template-columns: 1fr 48px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .process-card__icon {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        justify-self: end;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+    }
+
+    .process-card h3,
+    .process-card p {
+        grid-column: 1;
+    }
+
     .factor-card {
         min-height: auto;
         justify-items: start;
@@ -2319,166 +2341,5 @@ body>[data-site-header].site-header {
     .page-hero .btn-row,
     .legal-hero .btn-row {
         justify-content: center;
-    }
-}
-
-/* ==================================================
-   MOBILE COMPACT CARDS — ICONS / NUMBERS TOP RIGHT
-================================================== */
-
-@media (max-width: 640px) {
-
-    /* Cards containers */
-    .about-model__cards,
-    .about-values__panel,
-    .contact-card-grid,
-    .contact-after__grid,
-    .contact-verify__panel,
-    .services-compare__panel,
-    .service-intro__cards,
-    .service-checklist__panel,
-    .process-grid {
-        gap: 12px !important;
-    }
-
-    /* Main card compact style */
-    .about-model__card,
-    .about-value-card,
-    .contact-card-grid>*,
-    .contact-after__grid>*,
-    .contact-verify__panel>*,
-    .contact-details__panel.is-visible,
-    .services-compare__panel>*,
-    .service-intro-card,
-    .service-check-card,
-    .process-card {
-        position: relative !important;
-        display: block !important;
-        min-height: auto !important;
-        padding: 16px 74px 16px 16px !important;
-        border-radius: 18px !important;
-    }
-
-    /* If cards have grid columns from desktop */
-    .service-check-card,
-    .factor-card,
-    .process-card,
-    .about-model__card,
-    .about-value-card {
-        grid-template-columns: none !important;
-    }
-
-    /* Icons top right */
-    .about-model__icon,
-    .about-value-card__icon,
-    .contact-card__icon,
-    .contact-after__icon,
-    .contact-verify__icon,
-    .contact-details__icon,
-    .services-compare__icon,
-    .service-intro-card__icon,
-    .service-check-card__icon,
-    .process-card__icon {
-        position: absolute !important;
-        top: 16px !important;
-        right: 16px !important;
-        display: grid !important;
-        place-items: center !important;
-        width: 44px !important;
-        height: 44px !important;
-        min-width: 44px !important;
-        margin: 0 !important;
-        border-radius: 14px !important;
-        line-height: 0 !important;
-    }
-
-    .about-model__icon svg,
-    .about-value-card__icon svg,
-    .contact-card__icon svg,
-    .contact-after__icon svg,
-    .contact-verify__icon svg,
-    .contact-details__icon svg,
-    .services-compare__icon svg,
-    .service-intro-card__icon svg,
-    .service-check-card__icon svg,
-    .process-card__icon svg {
-        width: 21px !important;
-        height: 21px !important;
-        margin: 0 !important;
-    }
-
-    /* Titles smaller and not too tall */
-    .about-model__card h3,
-    .about-value-card h3,
-    .contact-card-grid h3,
-    .contact-after__grid h3,
-    .contact-verify__panel h3,
-    .contact-details__panel h3,
-    .services-compare__panel h3,
-    .service-intro-card h3,
-    .service-check-card h3,
-    .process-card h3 {
-        max-width: 100% !important;
-        margin-bottom: 6px !important;
-        padding-right: 4px !important;
-        font-size: 1.02rem !important;
-        line-height: 1.15 !important;
-    }
-
-    /* Text compact */
-    .about-model__card p,
-    .about-value-card p,
-    .contact-card-grid p,
-    .contact-after__grid p,
-    .contact-verify__panel p,
-    .contact-details__panel p,
-    .services-compare__panel p,
-    .service-intro-card p,
-    .service-check-card p,
-    .process-card p {
-        max-width: none !important;
-        font-size: 0.86rem !important;
-        line-height: 1.45 !important;
-    }
-
-    /* Lists inside cards */
-    .about-model__card ul,
-    .about-value-card ul,
-    .contact-card-grid ul,
-    .contact-after__grid ul,
-    .contact-verify__panel ul,
-    .services-compare__panel ul,
-    .service-check-card ul {
-        gap: 7px !important;
-        margin-top: 8px !important;
-    }
-
-    .about-model__card li,
-    .about-value-card li,
-    .contact-card-grid li,
-    .contact-after__grid li,
-    .contact-verify__panel li,
-    .services-compare__panel li,
-    .service-check-card li {
-        font-size: 0.84rem !important;
-        line-height: 1.42 !important;
-    }
-
-    /* Process cards: remove desktop connector lines */
-    .process-card::after {
-        display: none !important;
-    }
-
-    /* If card has a big number as ::after — place it top right behind icon */
-    .about-model__card::after,
-    .about-value-card::after,
-    .contact-card-grid>*::after,
-    .contact-after__grid>*::after,
-    .contact-verify__panel>*::after,
-    .services-compare__panel>*::after,
-    .service-intro-card::after,
-    .service-check-card::after,
-    .process-card::before {
-        pointer-events: none;
     }
 }

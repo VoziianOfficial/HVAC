@@ -665,13 +665,17 @@
 
     .contact-card,
     .contact-verify-card {
-        grid-template-columns: 48px 1fr;
-        padding: 18px;
+        grid-template-columns: 1fr 48px;
+        gap: 12px;
+        padding: 16px;
         border-radius: 20px;
     }
 
     .contact-card__icon,
     .contact-verify-card__icon {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
         width: 48px;
         height: 48px;
         border-radius: 16px;
@@ -686,17 +690,44 @@
         grid-template-columns: 1fr;
     }
 
+    .contact-step {
+        grid-template-columns: 1fr 46px;
+        column-gap: 14px;
+        row-gap: 8px;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .contact-step__number {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        justify-self: end;
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        font-size: 0.95rem;
+    }
+
+    .contact-step h3,
+    .contact-step p {
+        grid-column: 1;
+    }
+
     .contact-details__panel {
         padding: 14px;
         border-radius: 22px;
     }
 
     .contact-detail-row {
-        grid-template-columns: 44px 1fr;
-        min-height: 64px;
+        grid-template-columns: 1fr 44px;
+        column-gap: 12px;
+        min-height: 56px;
+        padding: 10px 12px;
     }
 
     .contact-detail-row__icon {
+        grid-column: 2;
+        justify-self: end;
         width: 44px;
         height: 44px;
         border-radius: 15px;
@@ -729,19 +760,23 @@
 
     .contact-card,
     .contact-verify-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 44px;
     }
 
     .contact-card__icon,
     .contact-verify-card__icon {
-        margin-bottom: 2px;
+        width: 44px;
+        height: 44px;
+        border-radius: 15px;
     }
 
     .contact-detail-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 40px;
     }
 
     .contact-detail-row__icon {
-        margin-bottom: 2px;
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
     }
 }

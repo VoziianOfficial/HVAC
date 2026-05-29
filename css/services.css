@@ -635,11 +635,16 @@
     }
 
     .services-compare__item {
-        grid-template-columns: 46px 1fr;
-        padding: 15px;
+        grid-template-columns: 1fr 46px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 14px;
     }
 
     .services-compare__icon {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
         width: 46px;
         height: 46px;
         border-radius: 15px;
@@ -703,11 +708,16 @@
     }
 
     .services-compare__item {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 44px;
+        column-gap: 12px;
+        row-gap: 6px;
+        padding: 13px;
     }
 
     .services-compare__icon {
-        margin-bottom: 2px;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
     }
 
     .services-tools__mini {
