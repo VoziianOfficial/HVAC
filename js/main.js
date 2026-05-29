@@ -585,123 +585,220 @@
         }
     };
 
-    const injectDataAttributes = () => {
-        const values = {
-            companyName: CONFIG.companyName || '',
-            companyId: CONFIG.companyId || '',
-            phoneRaw: CONFIG.contact?.phoneRaw || '',
-            phoneDisplay: CONFIG.contact?.phoneDisplay || '',
-            phoneButtonText: CONFIG.contact?.phoneButtonText || '',
-            email: CONFIG.contact?.email || '',
-            address: CONFIG.address?.full || '',
-            serviceArea: CONFIG.serviceArea || '',
-            footerText: CONFIG.footerText || '',
-            disclaimer: CONFIG.disclaimer || '',
-            legalNotice: CONFIG.legalNotice || ''
-        };
-
-        qsa('[data-company-name]').forEach((el) => {
-            el.textContent = values.companyName;
-        });
-
-        qsa('[data-company-id]').forEach((el) => {
-            el.textContent = values.companyId;
-        });
-
-        qsa('[data-phone-link]').forEach((el) => {
-            el.setAttribute('href', `tel:${values.phoneRaw}`);
-            el.setAttribute('aria-label', `Call ${values.phoneDisplay}`);
-        });
-
-        qsa('[data-phone-text]').forEach((el) => {
-            const mode = el.getAttribute('data-phone-text');
-
-            if (mode === 'button') {
-                el.textContent = values.phoneButtonText || values.phoneDisplay;
-            } else {
-                el.textContent = values.phoneDisplay;
-            }
-        });
-
-        qsa('[data-email-link]').forEach((el) => {
-            el.setAttribute('href', `mailto:${values.email}`);
-            el.setAttribute('aria-label', `Email ${values.email}`);
-        });
-
-        qsa('[data-email-text]').forEach((el) => {
-            el.textContent = values.email;
-        });
-
-        qsa('[data-address-text]').forEach((el) => {
-            el.textContent = values.address;
-        });
-
-        qsa('[data-service-area]').forEach((el) => {
-            el.textContent = values.serviceArea;
-        });
-
-        qsa('[data-footer-text]').forEach((el) => {
-            el.textContent = values.footerText;
-        });
-
-        qsa('[data-disclaimer]').forEach((el) => {
-            el.textContent = values.disclaimer;
-        });
-
-        qsa('[data-legal-notice]').forEach((el) => {
-            el.textContent = values.legalNotice;
-        });
+  const applyGlobalConfig = () => {
+    const getValue = (path, fallback = '') => {
+      return path.split('.').reduce((object, key) => {
+        return object && object[key] !== undefined ? object[key] : undefined;
+      }, CONFIG) ?? fallback;
     };
 
-    const replaceTextTokens = () => {
-        const replacements = {
-            '{{companyName}}': CONFIG.companyName || '',
-            '{{phoneDisplay}}': CONFIG.contact?.phoneDisplay || '',
-            '{{phoneRaw}}': CONFIG.contact?.phoneRaw || '',
-            '{{email}}': CONFIG.contact?.email || '',
-            '{{address}}': CONFIG.address?.full || '',
-            '{{companyId}}': CONFIG.companyId || '',
-            '{{serviceArea}}': CONFIG.serviceArea || ''
-        };
+    const values = {
+      companyName: CONFIG.companyName || '',
+      companyId: CONFIG.companyId || '',
 
-        const walker = document.createTreeWalker(
-            document.body,
-            NodeFilter.SHOW_TEXT,
-            {
-                acceptNode(node) {
-                    const parent = node.parentElement;
+      phoneRaw: CONFIG.contact?.phoneRaw || '',
+      phoneDisplay: CONFIG.contact?.phoneDisplay || '',
+      phoneButtonText: CONFIG.contact?.phoneButtonText || CONFIG.contact?.phoneDisplay || '',
 
-                    if (!parent) {
-                        return NodeFilter.FILTER_REJECT;
-                    }
+      email: CONFIG.contact?.email || '',
+      supportHours: CONFIG.contact?.supportHours || '',
 
-                    if (['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT'].includes(parent.tagName)) {
-                        return NodeFilter.FILTER_REJECT;
-                    }
+      address: CONFIG.address?.full || '',
+      addressLine1: CONFIG.address?.line1 || '',
+      addressCity: CONFIG.address?.city || '',
+      addressState: CONFIG.address?.state || '',
+      addressZip: CONFIG.address?.zip || '',
+      addressCountry: CONFIG.address?.country || '',
 
-                    return node.nodeValue.includes('{{')
-                        ? NodeFilter.FILTER_ACCEPT
-                        : NodeFilter.FILTER_REJECT;
-                }
-            }
-        );
+      serviceArea: CONFIG.serviceArea || '',
+      footerText: CONFIG.footerText || '',
+      disclaimer: CONFIG.disclaimer || '',
+      legalNotice: CONFIG.legalNotice || ''
+    };
 
-        const nodes = [];
+    const tokens = {
+      '{{companyName}}': values.companyName,
+      '{{companyId}}': values.companyId,
 
-        while (walker.nextNode()) {
-            nodes.push(walker.currentNode);
+      '{{phoneRaw}}': values.phoneRaw,
+      '{{phoneDisplay}}': values.phoneDisplay,
+      '{{phoneButtonText}}': values.phoneButtonText,
+
+      '{{email}}': values.email,
+      '{{supportHours}}': values.supportHours,
+
+      '{{address}}': values.address,
+      '{{addressLine1}}': values.addressLine1,
+      '{{addressCity}}': values.addressCity,
+      '{{addressState}}': values.addressState,
+      '{{addressZip}}': values.addressZip,
+      '{{addressCountry}}': values.addressCountry,
+
+      '{{serviceArea}}': values.serviceArea,
+      '{{footerText}}': values.footerText,
+      '{{disclaimer}}': values.disclaimer,
+      '{{legalNotice}}': values.legalNotice
+    };
+
+    const replaceTokens = (text) => {
+      if (typeof text !== 'string' || !text.includes('{{')) {
+        return text;
+      }
+
+      let result = text;
+
+      Object.entries(tokens).forEach(([token, value]) => {
+        result = result.replaceAll(token, value);
+      });
+
+      return result;
+    };
+
+    const setText = (selector, value) => {
+      qsa(selector).forEach((el) => {
+        el.textContent = value;
+      });
+    };
+
+    const setAttribute = (selector, attribute, value) => {
+      qsa(selector).forEach((el) => {
+        el.setAttribute(attribute, value);
+      });
+    };
+
+    /* =========================
+       Direct data attributes
+    ========================== */
+
+    setText('[data-company-name]', values.companyName);
+    setText('[data-company-id]', values.companyId);
+
+    qsa('[data-phone-link]').forEach((el) => {
+      el.setAttribute('href', `tel:${values.phoneRaw}`);
+      el.setAttribute('aria-label', `Call ${values.phoneDisplay}`);
+    });
+
+    qsa('[data-phone-text]').forEach((el) => {
+      const mode = el.getAttribute('data-phone-text');
+
+      if (mode === 'button') {
+        el.textContent = values.phoneButtonText;
+        return;
+      }
+
+      el.textContent = values.phoneDisplay;
+    });
+
+    qsa('[data-email-link]').forEach((el) => {
+      el.setAttribute('href', `mailto:${values.email}`);
+      el.setAttribute('aria-label', `Email ${values.email}`);
+    });
+
+    setText('[data-email-text]', values.email);
+    setText('[data-address-text]', values.address);
+    setText('[data-support-hours]', values.supportHours);
+    setText('[data-service-area]', values.serviceArea);
+    setText('[data-footer-text]', values.footerText);
+    setText('[data-disclaimer]', values.disclaimer);
+    setText('[data-legal-notice]', values.legalNotice);
+
+    /* =========================
+       Flexible config attributes
+       Example:
+       <span data-config-text="contact.email"></span>
+    ========================== */
+
+    qsa('[data-config-text]').forEach((el) => {
+      const path = el.getAttribute('data-config-text');
+      el.textContent = getValue(path);
+    });
+
+    qsa('[data-config-href]').forEach((el) => {
+      const path = el.getAttribute('data-config-href');
+      el.setAttribute('href', getValue(path));
+    });
+
+    qsa('[data-config-placeholder]').forEach((el) => {
+      const path = el.getAttribute('data-config-placeholder');
+      el.setAttribute('placeholder', getValue(path));
+    });
+
+    qsa('[data-config-aria-label]').forEach((el) => {
+      const path = el.getAttribute('data-config-aria-label');
+      el.setAttribute('aria-label', getValue(path));
+    });
+
+    /* =========================
+       Replace text tokens in page content
+    ========================== */
+
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          const parent = node.parentElement;
+
+          if (!parent) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          if (['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'SELECT'].includes(parent.tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+
+          return node.nodeValue.includes('{{')
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_REJECT;
         }
+      }
+    );
 
-        nodes.forEach((node) => {
-            let text = node.nodeValue;
+    const textNodes = [];
 
-            Object.entries(replacements).forEach(([token, value]) => {
-                text = text.replaceAll(token, value);
-            });
+    while (walker.nextNode()) {
+      textNodes.push(walker.currentNode);
+    }
 
-            node.nodeValue = text;
-        });
-    };
+    textNodes.forEach((node) => {
+      node.nodeValue = replaceTokens(node.nodeValue);
+    });
+
+    /* =========================
+       Replace tokens in useful attributes
+    ========================== */
+
+    qsa('[title], [aria-label], [alt], [placeholder], [href], meta[content]').forEach((el) => {
+      ['title', 'aria-label', 'alt', 'placeholder', 'href', 'content'].forEach((attribute) => {
+        if (!el.hasAttribute(attribute)) return;
+
+        const currentValue = el.getAttribute(attribute);
+        const nextValue = replaceTokens(currentValue);
+
+        if (currentValue !== nextValue) {
+          el.setAttribute(attribute, nextValue);
+        }
+      });
+    });
+
+    /* =========================
+       Document title and meta description
+    ========================== */
+
+    document.title = replaceTokens(document.title);
+
+    const metaDescription = qs('meta[name="description"]');
+
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        'content',
+        replaceTokens(metaDescription.getAttribute('content') || '')
+      );
+    }
+  };
+   
+
+   
 
     const buildServiceCard = (service) => {
         return `
@@ -927,8 +1024,7 @@
 
         renderServiceCards();
 
-        injectDataAttributes();
-        replaceTextTokens();
+      applyGlobalConfig();
 
         initMobileMenu();
         initServicesDropdown();
