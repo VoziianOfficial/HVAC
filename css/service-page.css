@@ -236,16 +236,7 @@
     overflow: hidden;
 }
 
-.service-tabs__nav-wrap::before,
-.service-tabs__nav-wrap::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 38px;
-    pointer-events: none;
-}
+
 
 .service-tabs__nav-wrap::before {
     left: 0;
